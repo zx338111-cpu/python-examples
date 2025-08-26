@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package agibot.gdk.dds_example;
+
+
+message Msg{
+    string name = 1;
+    string process = 2;
+    uint32 pid = 3;
+    uint64 last_heartbeat = 4;
+    uint64 timestamp = 5;
+    int32 interval = 6;
+    double num = 7;
+    uint64 publish_ptp_ts = 536870907;
+    string publisher_id = 536870909;
+    uint64 counter = 536870910;
+    uint64 publish_ts = 536870911;
+}

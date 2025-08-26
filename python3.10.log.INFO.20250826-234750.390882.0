@@ -1,0 +1,958 @@
+Log file created at: 2025/08/26 23:47:50
+Running on machine: G2
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0826 23:47:50.024153 390882 dylog_impl.cpp:641] [DYLOG] set dylog default level to INFO
+I0826 23:47:50.024228 390882 dylog_impl.cpp:690] [DYLOG] soc num : R2
+I0826 23:47:50.024243 390882 dylog_impl.cpp:695] [DYLOG] can't read scene_mode, use sud
+W0826 23:47:50.024268 390882 dylog_impl.cpp:757] [DYLOG] can't find available json config file with path : /home/agi/app/conf/scene_server/dylog_sud_default.json, use default.
+I0826 23:47:50.024397 390882 dylog_impl.cpp:293] [DYLOG] register dsd_name : dylog/python3.10/cosine_internal
+I0826 23:47:50.027547 390882 cosine_bus_manager.cpp:88] [cosine_internal][CosineBusManager] cosine bus config path not set, use default config.
+I0826 23:47:50.027585 390882 cosine_bus_manager.cpp:118] [cosine_internal][CosineBusManager] initial cosine_bus_config:
+I0826 23:47:50.029517 390882 cosine_bus_global_sync.cpp:30] [cosine_internal][BusGlobalSync] set default middleware name:aorta
+I0826 23:47:50.029568 390882 scheduler_classic.cpp:28] [cosine_internal]Proc number set to be: 1
+I0826 23:47:50.030525 390882 dynamic_object.cpp:521] [cosine_internal][DynamicObject] open libdynamic_aorta.so success.
+I0826 23:47:50.030705 390882 dynamic_object.cpp:581] [cosine_internal][DynamicObject] Successfully enumerated 57 symbols in libdynamic_aorta.so
+I0826 23:47:50.030715 390882 resource_loader.cpp:13] [cosine_internal][ResourceLoader] Attempting to load function: aorta_get_object
+I0826 23:47:50.030719 390882 resource_loader.cpp:17] [cosine_internal][ResourceLoader] Trying address() method for C++ symbol: aorta_get_object
+I0826 23:47:50.030725 390882 resource_loader.cpp:20] [cosine_internal][ResourceLoader] Successfully loaded C++ symbol: aorta_get_object
+I0826 23:47:50.030730 390882 resource_loader.cpp:13] [cosine_internal][ResourceLoader] Attempting to load function: aorta_call_object_func
+I0826 23:47:50.030732 390882 resource_loader.cpp:17] [cosine_internal][ResourceLoader] Trying address() method for C++ symbol: aorta_call_object_func
+I0826 23:47:50.030736 390882 resource_loader.cpp:20] [cosine_internal][ResourceLoader] Successfully loaded C++ symbol: aorta_call_object_func
+I0826 23:47:50.030740 390882 resource_loader.cpp:13] [cosine_internal][ResourceLoader] Attempting to load function: aorta_clean_up
+I0826 23:47:50.030743 390882 resource_loader.cpp:17] [cosine_internal][ResourceLoader] Trying address() method for C++ symbol: aorta_clean_up
+I0826 23:47:50.030757 390882 resource_loader.cpp:25] [cosine_internal][ResourceLoader] C++ symbol failed, trying c_address() method for C symbol: aorta_clean_up
+I0826 23:47:50.030762 390882 resource_loader.cpp:28] [cosine_internal][ResourceLoader] Successfully loaded C symbol: aorta_clean_up
+W0826 23:47:50.030769 390882 aorta_component.cpp:90] [cosine_internal]Environment variable [LOCATOR_IP/DDS_IP] not set, fallback to 10.42.0.101
+I0826 23:47:50.030774 390882 aorta_component.cpp:496] [cosine_internal][AortaComponent] locator_ip: 10.42.0.101; Check network before domain init 
+I0826 23:47:50.030810 390882 clock.cpp:22] [cosine_internal]load ptp time source from: libptp_clock_time.so
+I0826 23:47:50.030963 390882 dynamic_object.cpp:521] [cosine_internal][DynamicObject] open libptp_clock_time.so success.
+I0826 23:47:50.031417 390882 aorta_component.cpp:515] [cosine_internal][AortaComponent] Network check start. locator_ip: 10.42.0.101, timeout: 60 seconds , check_start_time: 1756223270
+I0826 23:47:50.031455 390882 aorta_component.cpp:526] [cosine_internal][AortaComponent] locator_ip: 10.42.0.101; network is ready.
+I0826 23:47:50.031507 390882 dylog_impl.cpp:293] [DYLOG] register dsd_name : dylog/python3.10/aorta
+I0826 23:47:50.031642 390882 pcie_config.cc:52] [aorta]Get one valid pcie channel. producer: soc-s3 app-map_loc_app endpoint-nvscic2c_pcie_s3_c7_11 consumer: soc-s1 app-worldmodel endpoint-nvscic2c_pcie_s1_c7_11
+I0826 23:47:50.031730 390882 os.cc:88] [aorta]Got host_id from system files: Huixi R1ROBOR2
+I0826 23:47:50.031766 390882 pcie_manager.cc:71] [aorta]There is no pcie config in current process.
+I0826 23:47:50.032088 390882 message_monitor_config.cc:398] [aorta]run in  mode
+I0826 23:47:50.033305 390882 domain_impl.cc:58] [aorta]aorta version:7b1b7ddc
+I0826 23:47:50.033331 390882 json_comm.cc:35] [aorta]file path: /home/agi/app/conf/topology/topology_rule.json not exist.
+I0826 23:47:50.033345 390882 message_monitor_config.cc:398] [aorta]run in  mode
+I0826 23:47:50.034672 390882 message_monitor_config.cc:731] [aorta]message monitor is updated from /home/agi/app/conf/aorta/function/aorta_monitor_conf.json
+I0826 23:47:50.035621 390882 discovery_factory.cc:14] [aorta]type:1, host:10.42.0.101, port:2379, ttl:15, minor_cycle:100, major_cycle:3
+I0826 23:47:50.036115 390882 config.cc:53] [aorta]AORTA_IP_MASK not set.
+I0826 23:47:50.036123 390882 discovery.cc:245] [aorta]get ip masks empty.
+I0826 23:47:50.036131 390882 config.cc:200] [aorta]AORTA_EXTRA_LOCAL_IPS not set.
+I0826 23:47:50.036135 390882 discovery.cc:266] [aorta]local_publisher_ips_ empty.
+I0826 23:47:50.036155 390882 config.cc:124] [aorta]ip match, ip:127.0.0.1
+I0826 23:47:50.036163 390882 discovery.cc:275] [aorta]default emplace ip:10.42.0.101
+I0826 23:47:50.036167 390882 discovery.cc:275] [aorta]default emplace ip:10.42.12.101
+I0826 23:47:50.036170 390882 discovery.cc:275] [aorta]default emplace ip:10.42.1.101
+I0826 23:47:50.036173 390882 discovery.cc:275] [aorta]default emplace ip:10.42.6.101
+I0826 23:47:50.036175 390882 discovery.cc:275] [aorta]default emplace ip:192.168.1.101
+I0826 23:47:50.036178 390882 discovery.cc:275] [aorta]default emplace ip:10.42.30.101
+I0826 23:47:50.036181 390882 discovery.cc:275] [aorta]default emplace ip:10.42.40.101
+I0826 23:47:50.036183 390882 discovery.cc:275] [aorta]default emplace ip:10.20.15.199
+I0826 23:47:50.036186 390882 discovery.cc:275] [aorta]default emplace ip:10.42.6.101
+I0826 23:47:50.036190 390882 centralized_discovery.cc:55] [aorta]lease_ttl_:15
+I0826 23:47:50.036576 390882 aorta_component.cpp:561] [cosine_internal][AortaComponent] aorta create domain success. uri:http://10.42.0.101:2379
+I0826 23:47:50.036728 390882 aorta_component.cpp:447] [cosine_internal][AortaComponent] aorta domain created node: python3.10_S1 , domain_uri:http://10.42.0.101:2379
+I0826 23:47:50.036738 390882 aorta_component.cpp:126] [cosine_internal][AortaComponent] aorta component init success. node:python3.10_S1, uri:http://10.42.0.101:2379, locator_kind(1:shm,2:tcp,3:udp):2, locator_ip:10.42.0.101, locator_port:0, aorta_dispatcher_thread_num:1
+I0826 23:47:50.036962 390926 executor_impl.cc:91] [aorta]aorta-dispatch0 start spinning
+I0826 23:47:50.037004 390919 processor.cpp:40] [cosine_internal]processor_tid: 390919
+I0826 23:47:50.051954 390925 centralized_discovery.cc:1110] [aorta]poll thread: revision:1503
+I0826 23:47:50.052063 390925 centralized_discovery.cc:1123] [aorta]inotify_fd_:15 inotify_watch_:1 inotify_watch_path:/home/agi/app/conf/aorta/function
+I0826 23:47:50.054791 390925 centralized_discovery.cc:615] [aorta]grant lease for node python3.10_S1 lease_id = 7587889064995166109
+I0826 23:47:50.056252 390925 watch_state.cc:54] [aorta]watch connect success.
+I0826 23:47:50.056977 390925 centralized_discovery.cc:1615] [aorta]recv watch response created.
+I0826 23:47:50.088316 390882 cosine_bus_manager.cpp:294] [cosine_internal][CosineBusManager] create publisher. topic name:/gdk/config_request , middleware:aorta
+I0826 23:47:50.089030 390882 tcp_publisher.cc:179] [aorta]topic /gdk/config_request, pub_queue_size_ 5, latch_queue_size_ 0
+I0826 23:47:50.089246 390933 tcp_socket_server.cc:200] [aorta]The ip info is0.0.0.0:35563
+I0826 23:47:50.089363 390933 shm_socket_server.cc:101] [aorta][/gdk/config_request] bind at pipe sock name d2379|python3.10|p390882|n0|/gdk/config_request|p0
+I0826 23:47:50.089449 390882 node_impl.cc:198] [aorta]CreatePublisher, host:0.0.0.0, port:35563, sockname:d2379|python3.10|p390882|n0|/gdk/config_request|p0, topic:/gdk/config_request, uid:fa89c23e-1e67-4ffa-9e37-7facb0a860be-4991715019463590898 topic_uid:-1
+I0826 23:47:50.089483 390882 aorta_component.cpp:394] [cosine_internal][AortaComponent] aorta node create publisher. node: python3.10_S1, topic:/gdk/config_request, type:genie_msgs.msg.pb.CommonRequest, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0826 23:47:50.089522 390882 aorta_publisher.cpp:119] [cosine_internal][AortaPublisher] publisher initialize. topic:/gdk/config_request, uri:
+I0826 23:47:50.089538 390882 dylog_impl.cpp:293] [DYLOG] register dsd_name : dylog/python3.10/GDK
+I0826 23:47:50.089548 390925 centralized_discovery.cc:681] [aorta]publisher uid:fa89c23e-1e67-4ffa-9e37-7facb0a860be-4991715019463590898 topic:/gdk/config_request
+I0826 23:47:50.089578 390882 publisher.cpp:27] [GDK]create publisher: /gdk/config_request type: genie_msgs.msg.pb.CommonRequest qos: 1 1 5 2
+I0826 23:47:50.089599 390882 cosine_bus_manager.cpp:294] [cosine_internal][CosineBusManager] create publisher. topic name:/gdk/camera_conf_request , middleware:aorta
+I0826 23:47:50.090009 390882 tcp_publisher.cc:179] [aorta]topic /gdk/camera_conf_request, pub_queue_size_ 5, latch_queue_size_ 0
+I0826 23:47:50.090061 390933 tcp_socket_server.cc:200] [aorta]The ip info is0.0.0.0:41295
+I0826 23:47:50.090126 390933 shm_socket_server.cc:101] [aorta][/gdk/camera_conf_request] bind at pipe sock name d2379|python3.10|p390882|n0|/gdk/camera_conf_request|p1
+I0826 23:47:50.090174 390882 node_impl.cc:198] [aorta]CreatePublisher, host:0.0.0.0, port:41295, sockname:d2379|python3.10|p390882|n0|/gdk/camera_conf_request|p1, topic:/gdk/camera_conf_request, uid:aeeb845e-2d32-4efd-b8f0-9465885ca280-9117180461459404870 topic_uid:-1
+I0826 23:47:50.090193 390882 aorta_component.cpp:394] [cosine_internal][AortaComponent] aorta node create publisher. node: python3.10_S1, topic:/gdk/camera_conf_request, type:genie_msgs.msg.pb.CommonRequest, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0826 23:47:50.090225 390882 aorta_publisher.cpp:119] [cosine_internal][AortaPublisher] publisher initialize. topic:/gdk/camera_conf_request, uri:
+I0826 23:47:50.090234 390882 publisher.cpp:27] [GDK]create publisher: /gdk/camera_conf_request type: genie_msgs.msg.pb.CommonRequest qos: 1 1 5 2
+I0826 23:47:50.090250 390882 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/gdk/config_response , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0826 23:47:50.090261 390882 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/gdk/config_responsehttp://10.42.0.101:2379
+I0826 23:47:50.090328 390882 dynamic_object.cpp:521] [cosine_internal][DynamicObject] open  success.
+I0826 23:47:50.090484 390882 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___gdk__config_response, type genie_msgs.msg.pb.CommonResponse, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 1
+I0826 23:47:50.090508 390882 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___gdk__config_response, type:genie_msgs.msg.pb.CommonResponse, size:5
+I0826 23:47:50.090591 390882 node_impl.cc:344] [aorta]CreateSubscriber topic:/gdk/config_response, uid:0dbe781e-53ba-451c-af8a-192e74da8058-9533047780102618842 topic_uid:-1
+I0826 23:47:50.091116 390882 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/gdk/config_response, type:genie_msgs.msg.pb.CommonResponse, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0826 23:47:50.091131 390882 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/gdk/config_response, uri:
+I0826 23:47:50.091146 390882 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/gdk/camera_conf_response , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0826 23:47:50.091154 390882 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/gdk/camera_conf_responsehttp://10.42.0.101:2379
+I0826 23:47:50.091197 390882 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___gdk__camera_conf_response, type genie_msgs.msg.pb.CommonResponse, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 2
+I0826 23:47:50.091210 390882 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___gdk__camera_conf_response, type:genie_msgs.msg.pb.CommonResponse, size:5
+I0826 23:47:50.091286 390882 node_impl.cc:344] [aorta]CreateSubscriber topic:/gdk/camera_conf_response, uid:b610bfa1-c1d1-41ef-b3f5-ee17ba6f0f53-3551884323222435368 topic_uid:-1
+I0826 23:47:50.091740 390882 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/gdk/camera_conf_response, type:genie_msgs.msg.pb.CommonResponse, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0826 23:47:50.091753 390882 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/gdk/camera_conf_response, uri:
+I0826 23:47:50.091825 390882 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/slam/odom , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0826 23:47:50.091835 390882 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/slam/odomhttp://10.42.0.101:2379
+I0826 23:47:50.091950 390925 centralized_discovery.cc:681] [aorta]publisher uid:aeeb845e-2d32-4efd-b8f0-9465885ca280-9117180461459404870 topic:/gdk/camera_conf_request
+I0826 23:47:50.091985 390882 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 3
+I0826 23:47:50.092001 390882 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___slam__odom, type:genie_msgs.msg.pb.OdomInfo, size:5
+I0826 23:47:50.092089 390882 node_impl.cc:344] [aorta]CreateSubscriber topic:/slam/odom, uid:68f61101-420c-4df1-a919-a5a5b14a08cb-8164318257426434522 topic_uid:-1
+I0826 23:47:50.092461 390882 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/slam/odom, type:genie_msgs.msg.pb.OdomInfo, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0826 23:47:50.092473 390882 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/slam/odom, uri:
+I0826 23:47:50.092507 390882 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/slam/state , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0826 23:47:50.092515 390882 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/slam/statehttp://10.42.0.101:2379
+I0826 23:47:50.092550 390882 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___slam__state, type genie_msgs.msg.pb.CommonResponse, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 4
+I0826 23:47:50.092562 390882 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___slam__state, type:genie_msgs.msg.pb.CommonResponse, size:5
+I0826 23:47:50.092631 390882 node_impl.cc:344] [aorta]CreateSubscriber topic:/slam/state, uid:ff3fb348-6f1c-4d2f-bc5c-335cd15e50d5-7791362299214773660 topic_uid:-1
+I0826 23:47:50.092998 390882 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/slam/state, type:genie_msgs.msg.pb.CommonResponse, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0826 23:47:50.093008 390882 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/slam/state, uri:
+I0826 23:47:50.093020 390882 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/slam/mapping_response , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0826 23:47:50.093029 390882 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/slam/mapping_responsehttp://10.42.0.101:2379
+I0826 23:47:50.093065 390882 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___slam__mapping_response, type genie_msgs.msg.pb.CommonResponse, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 5
+I0826 23:47:50.093076 390882 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___slam__mapping_response, type:genie_msgs.msg.pb.CommonResponse, size:5
+I0826 23:47:50.093154 390882 node_impl.cc:344] [aorta]CreateSubscriber topic:/slam/mapping_response, uid:ccddb1ef-a95e-46f0-9d21-67ee6bd65bb0-3136143855590244141 topic_uid:-1
+I0826 23:47:50.093530 390882 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/slam/mapping_response, type:genie_msgs.msg.pb.CommonResponse, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0826 23:47:50.093540 390882 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/slam/mapping_response, uri:
+I0826 23:47:50.093554 390882 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/slam/record_spec_loc_rsp , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0826 23:47:50.093560 390882 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/slam/record_spec_loc_rsphttp://10.42.0.101:2379
+I0826 23:47:50.093595 390882 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___slam__record_spec_loc_rsp, type genie_msgs.msg.pb.CommonResponse, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 6
+I0826 23:47:50.093608 390882 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___slam__record_spec_loc_rsp, type:genie_msgs.msg.pb.CommonResponse, size:5
+I0826 23:47:50.093638 390925 centralized_discovery.cc:733] [aorta]subscriber uid:0dbe781e-53ba-451c-af8a-192e74da8058-9533047780102618842 topic:/gdk/config_response
+I0826 23:47:50.093686 390882 node_impl.cc:344] [aorta]CreateSubscriber topic:/slam/record_spec_loc_rsp, uid:61fedf14-df1e-4334-adee-b62704059c9d-16786186340696970127 topic_uid:-1
+I0826 23:47:50.094089 390882 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/slam/record_spec_loc_rsp, type:genie_msgs.msg.pb.CommonResponse, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0826 23:47:50.094100 390882 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/slam/record_spec_loc_rsp, uri:
+I0826 23:47:50.094123 390882 cosine_bus_manager.cpp:294] [cosine_internal][CosineBusManager] create publisher. topic name:/slam/mapping_request , middleware:aorta
+I0826 23:47:50.094560 390882 tcp_publisher.cc:179] [aorta]topic /slam/mapping_request, pub_queue_size_ 5, latch_queue_size_ 0
+I0826 23:47:50.094652 390933 tcp_socket_server.cc:200] [aorta]The ip info is0.0.0.0:33181
+I0826 23:47:50.094854 390933 shm_socket_server.cc:101] [aorta][/slam/mapping_request] bind at pipe sock name d2379|python3.10|p390882|n0|/slam/mapping_request|p2
+I0826 23:47:50.094941 390882 node_impl.cc:198] [aorta]CreatePublisher, host:0.0.0.0, port:33181, sockname:d2379|python3.10|p390882|n0|/slam/mapping_request|p2, topic:/slam/mapping_request, uid:ee059963-0ab6-4841-b80a-245d373ee4fd-13788692708863539056 topic_uid:-1
+I0826 23:47:50.094969 390882 aorta_component.cpp:394] [cosine_internal][AortaComponent] aorta node create publisher. node: python3.10_S1, topic:/slam/mapping_request, type:genie_msgs.msg.pb.CommonRequest, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0826 23:47:50.095006 390882 aorta_publisher.cpp:119] [cosine_internal][AortaPublisher] publisher initialize. topic:/slam/mapping_request, uri:
+I0826 23:47:50.095026 390882 publisher.cpp:27] [GDK]create publisher: /slam/mapping_request type: genie_msgs.msg.pb.CommonRequest qos: 1 1 5 2
+I0826 23:47:50.095046 390882 cosine_bus_manager.cpp:294] [cosine_internal][CosineBusManager] create publisher. topic name:/slam/record_spec_loc_req , middleware:aorta
+I0826 23:47:50.095417 390934 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /gdk/config_response, local d2379|python3.10|p390882|n0|s0|c0, peer d2379|gdk_service|p8997|n0|/gdk/config_response|p0
+I0826 23:47:50.095499 390882 tcp_publisher.cc:179] [aorta]topic /slam/record_spec_loc_req, pub_queue_size_ 5, latch_queue_size_ 0
+I0826 23:47:50.095531 390925 centralized_discovery.cc:733] [aorta]subscriber uid:b610bfa1-c1d1-41ef-b3f5-ee17ba6f0f53-3551884323222435368 topic:/gdk/camera_conf_response
+I0826 23:47:50.095549 390933 tcp_socket_server.cc:200] [aorta]The ip info is0.0.0.0:32787
+I0826 23:47:50.095618 390933 shm_socket_server.cc:101] [aorta][/slam/record_spec_loc_req] bind at pipe sock name d2379|python3.10|p390882|n0|/slam/record_spec_loc_req|p3
+I0826 23:47:50.095665 390882 node_impl.cc:198] [aorta]CreatePublisher, host:0.0.0.0, port:32787, sockname:d2379|python3.10|p390882|n0|/slam/record_spec_loc_req|p3, topic:/slam/record_spec_loc_req, uid:407ea6d1-9eda-41c8-8498-9f427300f810-1186884789164360614 topic_uid:-1
+I0826 23:47:50.095683 390882 aorta_component.cpp:394] [cosine_internal][AortaComponent] aorta node create publisher. node: python3.10_S1, topic:/slam/record_spec_loc_req, type:genie_msgs.msg.pb.CommonRequest, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0826 23:47:50.095717 390882 aorta_publisher.cpp:119] [cosine_internal][AortaPublisher] publisher initialize. topic:/slam/record_spec_loc_req, uri:
+I0826 23:47:50.095726 390882 publisher.cpp:27] [GDK]create publisher: /slam/record_spec_loc_req type: genie_msgs.msg.pb.CommonRequest qos: 1 1 5 2
+I0826 23:47:50.096484 390934 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /gdk/camera_conf_response, local d2379|python3.10|p390882|n0|s1|c0, peer d2379|gdk_service|p8997|n0|/gdk/camera_conf_response|p1
+I0826 23:47:50.096658 390925 centralized_discovery.cc:733] [aorta]subscriber uid:68f61101-420c-4df1-a919-a5a5b14a08cb-8164318257426434522 topic:/slam/odom
+I0826 23:47:50.097729 390934 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /slam/odom, local d2379|python3.10|p390882|n0|s2|c0, peer d2379|slam_state_machine|p9575|n0|/slam/odom|p7
+I0826 23:47:50.097862 390934 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /slam/odom, local d2379|python3.10|p390882|n0|s2|c1, peer d2379|slam_state_machine|p9575|n0|/slam/odom|p8
+I0826 23:47:50.098019 390925 centralized_discovery.cc:733] [aorta]subscriber uid:ff3fb348-6f1c-4d2f-bc5c-335cd15e50d5-7791362299214773660 topic:/slam/state
+I0826 23:47:50.098956 390934 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /slam/state, local d2379|python3.10|p390882|n0|s3|c0, peer d2379|slam_state_machine|p9575|n0|/slam/state|p6
+I0826 23:47:50.099094 390925 centralized_discovery.cc:733] [aorta]subscriber uid:ccddb1ef-a95e-46f0-9d21-67ee6bd65bb0-3136143855590244141 topic:/slam/mapping_response
+I0826 23:47:50.100116 390934 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /slam/mapping_response, local d2379|python3.10|p390882|n0|s4|c0, peer d2379|dlb|p9381|n0|/slam/mapping_response|p12
+I0826 23:47:50.100289 390934 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /slam/mapping_response, local d2379|python3.10|p390882|n0|s4|c1, peer d2379|slam_state_machine|p9575|n0|/slam/mapping_response|p0
+I0826 23:47:50.100344 390925 centralized_discovery.cc:733] [aorta]subscriber uid:61fedf14-df1e-4334-adee-b62704059c9d-16786186340696970127 topic:/slam/record_spec_loc_rsp
+I0826 23:47:50.101461 390934 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /slam/record_spec_loc_rsp, local d2379|python3.10|p390882|n0|s5|c0, peer d2379|tagloc_state_machine|p12085|n0|/slam/record_spec_loc_rsp|p2
+I0826 23:47:50.101543 390925 centralized_discovery.cc:681] [aorta]publisher uid:ee059963-0ab6-4841-b80a-245d373ee4fd-13788692708863539056 topic:/slam/mapping_request
+I0826 23:47:50.104176 390925 centralized_discovery.cc:681] [aorta]publisher uid:407ea6d1-9eda-41c8-8498-9f427300f810-1186884789164360614 topic:/slam/record_spec_loc_req
+I0826 23:47:50.122927 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:50.218214 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:50.229094 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:50.315169 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:50.418567 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:50.429016 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:50.517211 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:50.614869 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 6, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 6
+I0826 23:47:50.614959 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:50.629108 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:50.717150 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 7, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 7
+I0826 23:47:50.717275 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:50.814518 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 8, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 8
+I0826 23:47:50.814627 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:50.829272 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:50.916031 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 9, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 9
+I0826 23:47:50.916119 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:51.017241 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 10, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 10
+I0826 23:47:51.017328 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:51.029354 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:51.114255 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 11, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 11
+I0826 23:47:51.114367 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:51.215876 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 12, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 12
+I0826 23:47:51.215971 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:51.229472 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:51.315115 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 13, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 13
+I0826 23:47:51.315213 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:51.415233 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 14, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 14
+I0826 23:47:51.415328 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:51.429589 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:51.517376 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 15, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 15
+I0826 23:47:51.517479 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:51.617372 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 16, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 16
+I0826 23:47:51.617463 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:51.629686 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:51.718567 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 17, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 17
+I0826 23:47:51.718657 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:51.816468 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 18, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 18
+I0826 23:47:51.816577 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:51.829782 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:51.915045 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 19, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 19
+I0826 23:47:51.915136 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:52.015790 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 20, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 20
+I0826 23:47:52.015899 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:52.029887 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:52.116567 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 21, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 21
+I0826 23:47:52.116658 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:52.216777 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 22, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 22
+I0826 23:47:52.216881 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:52.229995 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:52.317487 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 23, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 23
+I0826 23:47:52.317581 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:52.419086 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 24, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 24
+I0826 23:47:52.419190 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:52.430119 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:52.516515 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 25, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 25
+I0826 23:47:52.516613 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:52.612998 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 26, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 26
+I0826 23:47:52.613095 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:52.630227 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:52.715102 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 27, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 27
+I0826 23:47:52.715198 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:52.814080 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 28, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 28
+I0826 23:47:52.814167 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:52.830330 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:52.916772 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 29, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 29
+I0826 23:47:52.916867 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:53.017484 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 30, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 30
+I0826 23:47:53.017577 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:53.030433 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:53.117743 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 31, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 31
+I0826 23:47:53.117833 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:53.215387 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 32, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 32
+I0826 23:47:53.215500 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:53.230547 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:53.318545 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 33, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 33
+I0826 23:47:53.318666 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:53.416019 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 34, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 34
+I0826 23:47:53.416113 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:53.430673 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:53.514278 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 35, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 35
+I0826 23:47:53.514365 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:53.618682 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 36, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 36
+I0826 23:47:53.618793 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:53.630826 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:53.714184 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 37, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 37
+I0826 23:47:53.714294 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:53.815039 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 38, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 38
+I0826 23:47:53.815135 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:53.830904 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:53.916417 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 39, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 39
+I0826 23:47:53.916548 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:54.016119 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 40, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 40
+I0826 23:47:54.016229 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:54.031005 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:54.116751 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 41, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 41
+I0826 23:47:54.116860 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:54.214929 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 42, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 42
+I0826 23:47:54.215040 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:54.231106 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:54.314175 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 43, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 43
+I0826 23:47:54.314280 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:54.413074 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 44, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 44
+I0826 23:47:54.413208 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:54.431202 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:54.516026 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 45, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 45
+I0826 23:47:54.516130 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:54.616619 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 46, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 46
+I0826 23:47:54.616714 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:54.631330 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:54.715179 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 47, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 47
+I0826 23:47:54.715298 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:54.814988 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 48, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 48
+I0826 23:47:54.815102 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:54.831529 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:54.915836 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 49, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 49
+I0826 23:47:54.915930 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:55.016009 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 50, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 50
+I0826 23:47:55.016121 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:55.031561 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:55.115337 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 51, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 51
+I0826 23:47:55.115460 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:55.215401 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 52, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 52
+I0826 23:47:55.215518 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:55.231760 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:55.319094 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 53, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 53
+I0826 23:47:55.319190 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:55.417936 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 54, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 54
+I0826 23:47:55.418046 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:55.431746 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:55.518051 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 55, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 55
+I0826 23:47:55.518138 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:55.617565 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 56, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 56
+I0826 23:47:55.617676 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:55.631837 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:55.717344 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 57, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 57
+I0826 23:47:55.717437 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:55.817766 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 58, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 58
+I0826 23:47:55.817876 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:55.831975 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:55.915616 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 59, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 59
+I0826 23:47:55.915704 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:56.008241 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 60, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 60
+I0826 23:47:56.008328 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:56.032061 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:56.116888 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 61, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 61
+I0826 23:47:56.117007 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:56.216151 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 62, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 62
+I0826 23:47:56.216244 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:56.232184 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:56.320274 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 63, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 63
+I0826 23:47:56.320381 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:56.418529 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 64, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 64
+I0826 23:47:56.418618 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:56.432278 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:56.516283 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 65, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 65
+I0826 23:47:56.516396 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:56.621888 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 66, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 66
+I0826 23:47:56.621980 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:56.632391 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:56.715020 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 67, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 67
+I0826 23:47:56.715126 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:56.815743 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 68, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 68
+I0826 23:47:56.815855 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:56.832541 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:56.910111 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 69, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 69
+I0826 23:47:56.910205 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:57.015991 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 70, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 70
+I0826 23:47:57.016083 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:57.032618 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:57.115517 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 71, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 71
+I0826 23:47:57.115629 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:57.217576 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 72, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 72
+I0826 23:47:57.217679 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:57.232723 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:57.316671 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 73, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 73
+I0826 23:47:57.316768 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:57.419726 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 74, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 74
+I0826 23:47:57.419816 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:57.432834 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:57.516431 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 75, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 75
+I0826 23:47:57.516542 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:57.614863 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 76, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 76
+I0826 23:47:57.614959 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:57.632947 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:57.716024 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 77, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 77
+I0826 23:47:57.716114 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:57.815407 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 78, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 78
+I0826 23:47:57.815534 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:57.833062 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:57.915712 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 79, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 79
+I0826 23:47:57.915825 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:58.015878 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 80, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 80
+I0826 23:47:58.015975 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:58.033174 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:58.116180 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 81, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 81
+I0826 23:47:58.116273 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:58.216044 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 82, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 82
+I0826 23:47:58.216137 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:58.233283 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:58.317003 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 83, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 83
+I0826 23:47:58.317094 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:58.409957 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 84, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 84
+I0826 23:47:58.410054 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:58.433389 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:58.515909 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 85, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 85
+I0826 23:47:58.516007 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:58.617054 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 86, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 86
+I0826 23:47:58.617200 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:58.633499 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:58.717773 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 87, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 87
+I0826 23:47:58.717887 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:58.816371 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 88, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 88
+I0826 23:47:58.816466 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:58.833606 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:58.916491 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 89, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 89
+I0826 23:47:58.916584 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:59.016954 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 90, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 90
+I0826 23:47:59.017091 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:59.033710 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:59.116426 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 91, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 91
+I0826 23:47:59.116513 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:59.218509 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 92, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 92
+I0826 23:47:59.218595 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:59.233860 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:59.316308 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 93, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 93
+I0826 23:47:59.316396 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:59.416136 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 94, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 94
+I0826 23:47:59.416262 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:59.434053 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:59.517653 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 95, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 95
+I0826 23:47:59.517742 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:59.616158 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 96, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 96
+I0826 23:47:59.616247 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:59.634092 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:59.717814 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 97, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 97
+I0826 23:47:59.717911 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:59.814977 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 98, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 98
+I0826 23:47:59.815068 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:47:59.834220 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:47:59.913131 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 99, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 99
+I0826 23:47:59.913223 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:00.014571 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 100, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 100
+I0826 23:48:00.014699 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:00.034324 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:00.116658 390926 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___slam__odom, type genie_msgs.msg.pb.OdomInfo, block num 101, valid_time 0, transfer_type 0, data_size 112, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 101
+I0826 23:48:00.116755 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:00.216610 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:00.234431 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:00.315709 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:00.409510 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:00.434571 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:00.516413 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:00.617453 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:00.634678 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:00.716437 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:00.816048 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:00.835048 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:00.909520 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:01.015873 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:01.034924 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:01.117538 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:01.216568 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:01.235046 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:01.314538 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:01.415016 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:01.435122 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:01.517328 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:01.617276 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:01.635242 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:01.718317 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:01.813915 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:01.835342 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:01.918448 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:02.018453 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:02.035511 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:02.116694 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:02.216439 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:02.235594 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:02.308318 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:02.408515 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:02.435696 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:02.515101 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:02.608438 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:02.635812 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:02.715999 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:02.808482 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:02.835915 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:02.916697 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:03.015563 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:03.036034 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:03.115921 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:03.208698 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:03.236137 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:03.316537 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:03.418210 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:03.436241 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:03.516247 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:03.616549 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:03.636381 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:03.714888 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:03.814662 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:03.836532 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:03.915148 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:04.016209 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:04.036624 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:04.115774 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:04.217370 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:04.236781 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:04.308588 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:04.416061 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:04.436870 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:04.516474 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:04.617589 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:04.636986 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:04.716696 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:04.815773 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:04.837071 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:04.915416 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:05.015851 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:05.037199 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:05.115208 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:05.217481 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:05.237320 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:05.315022 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:05.413755 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:05.437420 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:05.514242 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:05.615935 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:05.637543 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:05.716459 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:05.815001 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:05.837668 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:05.916455 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:06.017786 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:06.037802 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:06.115357 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:06.214951 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:06.237870 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:06.315661 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:06.415803 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:06.438009 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:06.515844 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:06.614075 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:06.638116 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:06.708727 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:06.815546 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:06.838207 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:06.916749 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:07.018529 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:07.038340 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:07.115465 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:07.215726 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:07.238452 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:07.315210 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:07.421478 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:07.438546 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:07.517366 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:07.617883 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:07.638675 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:07.717281 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:07.815667 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:07.838794 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:07.916181 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:08.008363 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:08.038906 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:08.115939 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:08.215787 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:08.239266 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:08.315871 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:08.416710 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:08.439116 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:08.516630 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:08.616118 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:08.639232 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:08.715723 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:08.815496 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:08.839316 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:08.915856 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:09.015780 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:09.039486 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:09.115540 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:09.217311 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:09.239575 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:09.313836 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:09.415692 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:09.439733 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:09.518859 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:09.616974 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:09.639811 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:09.714406 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:09.814862 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:09.839948 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:09.914783 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:10.015061 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:10.040025 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:10.118263 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:10.216192 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:10.240192 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:10.315150 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:10.420717 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:10.440254 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:10.515858 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:10.615692 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:10.640396 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:10.716480 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:10.815878 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:10.840485 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:10.916267 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:11.015690 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:11.040620 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:11.116214 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:11.208981 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:11.240717 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:11.315184 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:11.415169 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:11.440830 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:11.518110 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:11.614591 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:11.640964 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:11.715054 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:11.815922 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:11.841060 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:11.914875 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:12.017441 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:12.041159 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:12.117462 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:12.216598 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:12.241286 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:12.316629 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:12.417505 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:12.441404 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:12.517112 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:12.615132 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:12.641516 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:12.714921 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:12.814966 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:12.841620 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:12.915992 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:13.016487 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:13.041736 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:13.117815 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:13.217446 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:13.241829 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:13.314677 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:13.415115 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:13.441962 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:13.518795 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:13.610781 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:13.642048 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:13.714041 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:13.815755 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:13.842165 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:13.917083 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:14.015887 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:14.042256 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:14.115936 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:14.215237 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:14.242384 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:14.315392 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:14.416405 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:14.442485 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:14.516806 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:14.616338 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:14.642606 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:14.715710 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:14.816968 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:14.842715 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:14.917017 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:15.017323 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:15.042833 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:15.109603 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:15.215690 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:15.242959 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:15.315711 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:15.415772 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:15.443063 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:15.516010 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:15.616006 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:15.643193 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:15.715524 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:15.816090 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:15.843289 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:15.914959 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:16.013680 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:16.043409 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:16.115391 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:16.210446 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:16.243623 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:16.313861 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:16.415935 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:16.443683 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:16.515849 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:16.616119 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:16.643767 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:16.714989 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:16.815482 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:16.843909 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:16.917202 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:17.016134 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:17.044104 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:17.120810 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:17.210215 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:17.244238 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:17.315119 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:17.416826 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:17.444356 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:17.515031 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:17.615096 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:17.646185 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:17.716447 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:17.816131 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:17.844578 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:17.917145 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:18.015712 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:18.044693 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:18.108669 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:18.216013 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:18.244800 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:18.314510 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:18.415560 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:18.444934 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:18.515605 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:18.615370 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:18.645049 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:18.717285 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:18.816202 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:18.845193 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:18.915201 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:19.016638 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:19.045286 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:19.117815 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:19.216540 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:19.245433 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:19.317274 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:19.418114 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:19.445528 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:19.516707 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:19.615880 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:19.645653 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:19.715766 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:19.815552 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:19.845760 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:19.914407 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:20.019160 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:20.045920 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:20.116159 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:20.215003 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:20.245988 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:20.315798 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:20.416363 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:20.446125 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:20.517169 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:20.616353 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:20.646243 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:20.715639 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:20.815827 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:20.846374 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:20.916918 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:21.015165 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:21.046461 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:21.115845 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:21.215755 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:21.246587 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:21.313663 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:21.414652 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:21.446705 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:21.508992 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:21.615406 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:21.646833 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:21.717037 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:21.816046 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:21.846938 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:21.917930 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:22.016103 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:22.047036 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:22.118814 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:22.218047 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:22.247153 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:22.315485 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:22.415529 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:22.447250 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:22.516052 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:22.616413 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:22.647522 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:22.716293 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:22.815785 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:22.847540 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:22.916649 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:23.019502 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:23.048660 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:23.116336 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:23.217841 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:23.247692 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:23.315604 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:23.417974 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:23.447820 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:23.508713 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:23.616504 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:23.647938 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:23.710109 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:23.815657 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:23.848040 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:23.916559 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:24.015472 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:24.048173 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:24.116324 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:24.215610 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:24.248283 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:24.315953 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:24.415740 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:24.448401 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:24.509269 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:24.618237 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:24.648530 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:24.716451 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:24.818086 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:24.848699 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:24.916293 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:25.016453 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:25.048774 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:25.116331 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:25.215387 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:25.248905 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:25.315292 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:25.409003 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:25.449025 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:25.515518 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:25.616001 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:25.649103 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:25.714651 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:25.817755 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:25.849223 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:25.918969 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:26.017073 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:26.049371 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:26.117353 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:26.216882 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:26.249508 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:26.315869 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:26.416126 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:26.449580 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:26.516032 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:26.616503 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:26.649688 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:26.710685 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:26.818215 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:26.849792 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:26.915161 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:27.016302 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:27.049904 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:27.115979 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:27.215559 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:27.250032 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:27.319413 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:27.414438 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:27.450156 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:27.518122 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:27.617381 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:27.650270 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:27.717123 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:27.818390 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:27.850404 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:27.917716 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:28.016160 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:28.050520 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:28.114432 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:28.215243 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:28.250655 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:28.321498 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:28.417613 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:28.450762 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:28.517349 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:28.615435 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:28.650861 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:28.715152 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:28.815992 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:28.851003 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:28.917239 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:29.015197 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:29.051087 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:29.116609 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:29.208796 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:29.251233 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:29.315688 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:29.415464 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:29.451309 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:29.515182 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:29.608665 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:29.651470 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:29.713303 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:29.818253 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:29.851606 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:29.915571 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:30.014729 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:30.051687 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:30.114660 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:30.214259 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:30.251775 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:30.315738 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:30.415581 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:30.451895 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:30.515925 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:30.615368 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:30.652033 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:30.715073 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:30.816295 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:30.852135 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:30.908639 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:31.014956 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:31.052253 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:31.114944 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:31.215268 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:31.252359 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:31.316190 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:31.408249 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:31.452493 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:31.515719 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:31.615459 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:31.652575 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:31.715694 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:31.814805 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:31.852710 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:31.914829 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:32.015175 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:32.052814 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:32.116438 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:32.208611 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:32.252936 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:32.314983 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:32.416061 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:32.453063 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:32.510039 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:32.616120 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:32.653148 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:32.714332 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:32.816017 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:32.853266 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:32.915985 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:33.015827 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:33.053364 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:33.113968 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:33.215190 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:33.253475 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:33.316640 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:33.416431 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:33.453593 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:33.516834 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:33.616776 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:33.653856 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:33.717607 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:33.814838 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:33.853811 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:33.915030 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:34.018534 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:34.053928 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:34.115383 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:34.216778 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:34.254055 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:34.314968 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:34.416029 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:34.454200 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:34.516716 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:34.615973 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:34.654289 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:34.716279 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:34.814380 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:34.854375 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:34.915648 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:35.014724 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:35.054487 390926 slam_impl.cpp:56] [GDK]Received slam state
+I0826 23:48:35.115374 390926 slam_impl.cpp:41] [GDK]Received slam odom
+I0826 23:48:35.178251 390882 slam.cpp:15] [GDK]Slam destructor
+I0826 23:48:35.178330 390882 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___slam__mapping_response release.
+I0826 23:48:35.178382 390882 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:ccddb1ef-a95e-46f0-9d21-67ee6bd65bb0-3136143855590244141
+I0826 23:48:35.178887 390882 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/slam/mapping_responsehttp://10.42.0.101:2379 release.
+I0826 23:48:35.178906 390882 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /slam/mapping_response
+I0826 23:48:35.178912 390882 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0826 23:48:35.178915 390882 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0826 23:48:35.178943 390882 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___slam__odom release.
+I0826 23:48:35.178956 390882 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:68f61101-420c-4df1-a919-a5a5b14a08cb-8164318257426434522
+I0826 23:48:35.179255 390882 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/slam/odomhttp://10.42.0.101:2379 release.
+I0826 23:48:35.179267 390882 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /slam/odom
+I0826 23:48:35.179271 390882 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0826 23:48:35.179275 390882 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0826 23:48:35.179292 390882 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___slam__record_spec_loc_rsp release.
+I0826 23:48:35.179311 390882 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:61fedf14-df1e-4334-adee-b62704059c9d-16786186340696970127
+I0826 23:48:35.179510 390882 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/slam/record_spec_loc_rsphttp://10.42.0.101:2379 release.
+I0826 23:48:35.179517 390882 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /slam/record_spec_loc_rsp
+I0826 23:48:35.179522 390882 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0826 23:48:35.179523 390882 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0826 23:48:35.179535 390882 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___slam__state release.
+I0826 23:48:35.179543 390882 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:ff3fb348-6f1c-4d2f-bc5c-335cd15e50d5-7791362299214773660
+I0826 23:48:35.179670 390882 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/slam/statehttp://10.42.0.101:2379 release.
+I0826 23:48:35.179677 390882 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /slam/state
+I0826 23:48:35.179679 390882 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0826 23:48:35.179682 390882 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0826 23:48:35.179952 390882 publisher_impl.cc:32] [aorta]Publisher destory, UnRegisterPublisher uid:407ea6d1-9eda-41c8-8498-9f427300f810-1186884789164360614
+I0826 23:48:35.180224 390882 publisher_impl.cc:32] [aorta]Publisher destory, UnRegisterPublisher uid:ee059963-0ab6-4841-b80a-245d373ee4fd-13788692708863539056
