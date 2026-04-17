@@ -1,0 +1,428 @@
+Log file created at: 2026/04/17 19:16:07
+Running on machine: G2
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0417 19:16:07.060494 255886 dylog_impl.cpp:641] [DYLOG] set dylog default level to INFO
+I0417 19:16:07.060570 255886 dylog_impl.cpp:690] [DYLOG] soc num : R2
+I0417 19:16:07.060585 255886 dylog_impl.cpp:695] [DYLOG] can't read scene_mode, use sud
+W0417 19:16:07.060608 255886 dylog_impl.cpp:757] [DYLOG] can't find available json config file with path : /home/agi/app/conf/scene_server/dylog_sud_default.json, use default.
+I0417 19:16:07.060720 255886 dylog_impl.cpp:293] [DYLOG] register dsd_name : dylog/python3.10/cosine_internal
+I0417 19:16:07.064183 255886 cosine_bus_manager.cpp:88] [cosine_internal][CosineBusManager] cosine bus config path not set, use default config.
+I0417 19:16:07.064229 255886 cosine_bus_manager.cpp:118] [cosine_internal][CosineBusManager] initial cosine_bus_config:
+I0417 19:16:07.066191 255886 cosine_bus_global_sync.cpp:30] [cosine_internal][BusGlobalSync] set default middleware name:aorta
+I0417 19:16:07.066231 255886 scheduler_classic.cpp:28] [cosine_internal]Proc number set to be: 1
+I0417 19:16:07.067528 255886 dynamic_object.cpp:521] [cosine_internal][DynamicObject] open libdynamic_aorta.so success.
+I0417 19:16:07.067718 255886 dynamic_object.cpp:581] [cosine_internal][DynamicObject] Successfully enumerated 57 symbols in libdynamic_aorta.so
+I0417 19:16:07.067729 255886 resource_loader.cpp:13] [cosine_internal][ResourceLoader] Attempting to load function: aorta_get_object
+I0417 19:16:07.067734 255886 resource_loader.cpp:17] [cosine_internal][ResourceLoader] Trying address() method for C++ symbol: aorta_get_object
+I0417 19:16:07.067740 255886 resource_loader.cpp:20] [cosine_internal][ResourceLoader] Successfully loaded C++ symbol: aorta_get_object
+I0417 19:16:07.067744 255886 resource_loader.cpp:13] [cosine_internal][ResourceLoader] Attempting to load function: aorta_call_object_func
+I0417 19:16:07.067747 255886 resource_loader.cpp:17] [cosine_internal][ResourceLoader] Trying address() method for C++ symbol: aorta_call_object_func
+I0417 19:16:07.067751 255886 resource_loader.cpp:20] [cosine_internal][ResourceLoader] Successfully loaded C++ symbol: aorta_call_object_func
+I0417 19:16:07.067754 255886 resource_loader.cpp:13] [cosine_internal][ResourceLoader] Attempting to load function: aorta_clean_up
+I0417 19:16:07.067757 255886 resource_loader.cpp:17] [cosine_internal][ResourceLoader] Trying address() method for C++ symbol: aorta_clean_up
+I0417 19:16:07.067771 255886 resource_loader.cpp:25] [cosine_internal][ResourceLoader] C++ symbol failed, trying c_address() method for C symbol: aorta_clean_up
+I0417 19:16:07.067776 255886 resource_loader.cpp:28] [cosine_internal][ResourceLoader] Successfully loaded C symbol: aorta_clean_up
+W0417 19:16:07.067785 255886 aorta_component.cpp:90] [cosine_internal]Environment variable [LOCATOR_IP/DDS_IP] not set, fallback to 10.42.0.101
+I0417 19:16:07.067790 255886 aorta_component.cpp:496] [cosine_internal][AortaComponent] locator_ip: 10.42.0.101; Check network before domain init 
+I0417 19:16:07.067842 255886 clock.cpp:22] [cosine_internal]load ptp time source from: libptp_clock_time.so
+I0417 19:16:07.068034 255886 dynamic_object.cpp:521] [cosine_internal][DynamicObject] open libptp_clock_time.so success.
+I0417 19:16:07.068925 255886 aorta_component.cpp:515] [cosine_internal][AortaComponent] Network check start. locator_ip: 10.42.0.101, timeout: 60 seconds , check_start_time: 1776424567
+I0417 19:16:07.068959 255886 aorta_component.cpp:526] [cosine_internal][AortaComponent] locator_ip: 10.42.0.101; network is ready.
+I0417 19:16:07.069021 255886 dylog_impl.cpp:293] [DYLOG] register dsd_name : dylog/python3.10/aorta
+I0417 19:16:07.069182 255886 pcie_config.cc:52] [aorta]Get one valid pcie channel. producer: soc-s3 app-map_loc_app endpoint-nvscic2c_pcie_s3_c7_11 consumer: soc-s1 app-worldmodel endpoint-nvscic2c_pcie_s1_c7_11
+I0417 19:16:07.069288 255886 os.cc:88] [aorta]Got host_id from system files: Huixi R1ROBOR2
+I0417 19:16:07.069332 255886 pcie_manager.cc:71] [aorta]There is no pcie config in current process.
+I0417 19:16:07.069720 255886 message_monitor_config.cc:398] [aorta]run in  mode
+I0417 19:16:07.070989 255886 domain_impl.cc:58] [aorta]aorta version:7b1b7ddc
+I0417 19:16:07.071018 255886 json_comm.cc:35] [aorta]file path: /home/agi/app/conf/topology/topology_rule.json not exist.
+I0417 19:16:07.071033 255886 message_monitor_config.cc:398] [aorta]run in  mode
+I0417 19:16:07.071688 255886 message_monitor_config.cc:731] [aorta]message monitor is updated from /home/agi/app/conf/aorta/function/aorta_monitor_conf.json
+I0417 19:16:07.072562 255886 discovery_factory.cc:14] [aorta]type:1, host:10.42.0.101, port:2379, ttl:15, minor_cycle:100, major_cycle:3
+I0417 19:16:07.073078 255886 config.cc:53] [aorta]AORTA_IP_MASK not set.
+I0417 19:16:07.073087 255886 discovery.cc:245] [aorta]get ip masks empty.
+I0417 19:16:07.073096 255886 config.cc:200] [aorta]AORTA_EXTRA_LOCAL_IPS not set.
+I0417 19:16:07.073100 255886 discovery.cc:266] [aorta]local_publisher_ips_ empty.
+I0417 19:16:07.073120 255886 config.cc:124] [aorta]ip match, ip:127.0.0.1
+I0417 19:16:07.073129 255886 discovery.cc:275] [aorta]default emplace ip:10.42.0.101
+I0417 19:16:07.073132 255886 discovery.cc:275] [aorta]default emplace ip:10.42.12.101
+I0417 19:16:07.073134 255886 discovery.cc:275] [aorta]default emplace ip:10.42.1.101
+I0417 19:16:07.073138 255886 discovery.cc:275] [aorta]default emplace ip:10.42.6.101
+I0417 19:16:07.073140 255886 discovery.cc:275] [aorta]default emplace ip:192.168.1.101
+I0417 19:16:07.073143 255886 discovery.cc:275] [aorta]default emplace ip:10.42.30.101
+I0417 19:16:07.073146 255886 discovery.cc:275] [aorta]default emplace ip:10.42.40.101
+I0417 19:16:07.073149 255886 discovery.cc:275] [aorta]default emplace ip:10.20.15.199
+I0417 19:16:07.073151 255886 discovery.cc:275] [aorta]default emplace ip:10.42.6.101
+I0417 19:16:07.073156 255886 centralized_discovery.cc:55] [aorta]lease_ttl_:15
+I0417 19:16:07.073565 255886 aorta_component.cpp:561] [cosine_internal][AortaComponent] aorta create domain success. uri:http://10.42.0.101:2379
+I0417 19:16:07.073743 255886 aorta_component.cpp:447] [cosine_internal][AortaComponent] aorta domain created node: python3.10_S1 , domain_uri:http://10.42.0.101:2379
+I0417 19:16:07.073753 255886 aorta_component.cpp:126] [cosine_internal][AortaComponent] aorta component init success. node:python3.10_S1, uri:http://10.42.0.101:2379, locator_kind(1:shm,2:tcp,3:udp):2, locator_ip:10.42.0.101, locator_port:0, aorta_dispatcher_thread_num:1
+I0417 19:16:07.073940 255924 processor.cpp:40] [cosine_internal]processor_tid: 255924
+I0417 19:16:07.073959 255933 executor_impl.cc:91] [aorta]aorta-dispatch0 start spinning
+I0417 19:16:07.093132 255932 centralized_discovery.cc:1110] [aorta]poll thread: revision:629
+I0417 19:16:07.093252 255932 centralized_discovery.cc:1123] [aorta]inotify_fd_:13 inotify_watch_:1 inotify_watch_path:/home/agi/app/conf/aorta/function
+I0417 19:16:07.094621 255932 centralized_discovery.cc:615] [aorta]grant lease for node python3.10_S1 lease_id = 7587889064995162593
+I0417 19:16:07.097079 255932 watch_state.cc:54] [aorta]watch connect success.
+I0417 19:16:07.097939 255932 centralized_discovery.cc:1615] [aorta]recv watch response created.
+I0417 19:16:07.147210 255886 cosine_bus_manager.cpp:294] [cosine_internal][CosineBusManager] create publisher. topic name:/gdk/config_request , middleware:aorta
+I0417 19:16:07.147922 255886 tcp_publisher.cc:179] [aorta]topic /gdk/config_request, pub_queue_size_ 5, latch_queue_size_ 0
+I0417 19:16:07.148185 255949 tcp_socket_server.cc:200] [aorta]The ip info is0.0.0.0:40825
+I0417 19:16:07.148334 255949 shm_socket_server.cc:101] [aorta][/gdk/config_request] bind at pipe sock name d2379|python3.10|p255886|n0|/gdk/config_request|p0
+I0417 19:16:07.148437 255886 node_impl.cc:198] [aorta]CreatePublisher, host:0.0.0.0, port:40825, sockname:d2379|python3.10|p255886|n0|/gdk/config_request|p0, topic:/gdk/config_request, uid:4f793519-96c5-40a3-9034-d99b34d4a52f-4991715019463590898 topic_uid:-1
+I0417 19:16:07.148474 255886 aorta_component.cpp:394] [cosine_internal][AortaComponent] aorta node create publisher. node: python3.10_S1, topic:/gdk/config_request, type:genie_msgs.msg.pb.CommonRequest, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.148530 255932 centralized_discovery.cc:681] [aorta]publisher uid:4f793519-96c5-40a3-9034-d99b34d4a52f-4991715019463590898 topic:/gdk/config_request
+I0417 19:16:07.148515 255886 aorta_publisher.cpp:119] [cosine_internal][AortaPublisher] publisher initialize. topic:/gdk/config_request, uri:
+I0417 19:16:07.148576 255886 dylog_impl.cpp:293] [DYLOG] register dsd_name : dylog/python3.10/GDK
+I0417 19:16:07.148728 255886 publisher.cpp:27] [GDK]create publisher: /gdk/config_request type: genie_msgs.msg.pb.CommonRequest qos: 1 1 5 2
+I0417 19:16:07.148765 255886 cosine_bus_manager.cpp:294] [cosine_internal][CosineBusManager] create publisher. topic name:/gdk/camera_conf_request , middleware:aorta
+I0417 19:16:07.149230 255886 tcp_publisher.cc:179] [aorta]topic /gdk/camera_conf_request, pub_queue_size_ 5, latch_queue_size_ 0
+I0417 19:16:07.149317 255949 tcp_socket_server.cc:200] [aorta]The ip info is0.0.0.0:36339
+I0417 19:16:07.149397 255949 shm_socket_server.cc:101] [aorta][/gdk/camera_conf_request] bind at pipe sock name d2379|python3.10|p255886|n0|/gdk/camera_conf_request|p1
+I0417 19:16:07.149458 255886 node_impl.cc:198] [aorta]CreatePublisher, host:0.0.0.0, port:36339, sockname:d2379|python3.10|p255886|n0|/gdk/camera_conf_request|p1, topic:/gdk/camera_conf_request, uid:b4baf58a-c318-4867-aae8-01e41429880b-9117180461459404870 topic_uid:-1
+I0417 19:16:07.149485 255886 aorta_component.cpp:394] [cosine_internal][AortaComponent] aorta node create publisher. node: python3.10_S1, topic:/gdk/camera_conf_request, type:genie_msgs.msg.pb.CommonRequest, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.149519 255886 aorta_publisher.cpp:119] [cosine_internal][AortaPublisher] publisher initialize. topic:/gdk/camera_conf_request, uri:
+I0417 19:16:07.149528 255886 publisher.cpp:27] [GDK]create publisher: /gdk/camera_conf_request type: genie_msgs.msg.pb.CommonRequest qos: 1 1 5 2
+I0417 19:16:07.149546 255886 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/gdk/config_response , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0417 19:16:07.149602 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/gdk/config_responsehttp://10.42.0.101:2379
+I0417 19:16:07.149688 255886 dynamic_object.cpp:521] [cosine_internal][DynamicObject] open  success.
+I0417 19:16:07.150228 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___gdk__config_response, type genie_msgs.msg.pb.CommonResponse, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 1
+I0417 19:16:07.150255 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___gdk__config_response, type:genie_msgs.msg.pb.CommonResponse, size:5
+I0417 19:16:07.150370 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/gdk/config_response, uid:277ec6a8-7116-4a8a-9b6c-9142171cecf4-9533047780102618842 topic_uid:-1
+I0417 19:16:07.151284 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/gdk/config_response, type:genie_msgs.msg.pb.CommonResponse, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.151309 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/gdk/config_response, uri:
+I0417 19:16:07.151337 255886 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/gdk/camera_conf_response , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0417 19:16:07.151346 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/gdk/camera_conf_responsehttp://10.42.0.101:2379
+I0417 19:16:07.151425 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___gdk__camera_conf_response, type genie_msgs.msg.pb.CommonResponse, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 2
+I0417 19:16:07.151445 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___gdk__camera_conf_response, type:genie_msgs.msg.pb.CommonResponse, size:5
+I0417 19:16:07.151547 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/gdk/camera_conf_response, uid:9425cf07-3301-4104-9e8a-e87c401a4323-3551884323222435368 topic_uid:-1
+I0417 19:16:07.151940 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/gdk/camera_conf_response, type:genie_msgs.msg.pb.CommonResponse, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.151953 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/gdk/camera_conf_response, uri:
+I0417 19:16:07.152050 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.152091 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/head_back_fisheye
+I0417 19:16:07.152099 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/head_back_fisheyehttp://10.42.0.101:2379
+I0417 19:16:07.152148 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__head_back_fisheye, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 3
+I0417 19:16:07.152163 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__head_back_fisheye, type:CosineDataPacket, size:5
+I0417 19:16:07.152238 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/head_back_fisheye, uid:90c027ab-a1bf-42ad-bc71-36f653aab206-10407449922038425096 topic_uid:-1
+I0417 19:16:07.152616 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/head_back_fisheye, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.152626 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/head_back_fisheye, uri:
+I0417 19:16:07.152647 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.152671 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/head_left_fisheye
+I0417 19:16:07.152678 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/head_left_fisheyehttp://10.42.0.101:2379
+I0417 19:16:07.152706 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__head_left_fisheye, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 4
+I0417 19:16:07.152719 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__head_left_fisheye, type:CosineDataPacket, size:5
+I0417 19:16:07.152782 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/head_left_fisheye, uid:01e3396c-a90a-434f-a539-982fd33333cb-14591831445956696588 topic_uid:-1
+I0417 19:16:07.153123 255932 centralized_discovery.cc:681] [aorta]publisher uid:b4baf58a-c318-4867-aae8-01e41429880b-9117180461459404870 topic:/gdk/camera_conf_request
+I0417 19:16:07.153633 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/head_left_fisheye, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.153713 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/head_left_fisheye, uri:
+I0417 19:16:07.153759 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.153803 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/head_right_fisheye
+I0417 19:16:07.153815 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/head_right_fisheyehttp://10.42.0.101:2379
+I0417 19:16:07.154418 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__head_right_fisheye, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 5
+I0417 19:16:07.154464 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__head_right_fisheye, type:CosineDataPacket, size:5
+I0417 19:16:07.154608 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/head_right_fisheye, uid:142f30a8-1e3f-4fbb-a847-6406b44d5f30-11724137809755197201 topic_uid:-1
+I0417 19:16:07.155885 255932 centralized_discovery.cc:733] [aorta]subscriber uid:277ec6a8-7116-4a8a-9b6c-9142171cecf4-9533047780102618842 topic:/gdk/config_response
+I0417 19:16:07.155941 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/head_right_fisheye, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.155961 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/head_right_fisheye, uri:
+I0417 19:16:07.156009 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.156057 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/head_stereo_left
+I0417 19:16:07.156067 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/head_stereo_lefthttp://10.42.0.101:2379
+I0417 19:16:07.156124 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__head_stereo_left, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 6
+I0417 19:16:07.156144 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__head_stereo_left, type:CosineDataPacket, size:5
+I0417 19:16:07.156252 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/head_stereo_left, uid:286b4559-5cc1-49e0-9abe-6e15254b256b-2772564262404746643 topic_uid:-1
+I0417 19:16:07.156683 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/head_stereo_left, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.156708 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/head_stereo_left, uri:
+I0417 19:16:07.156738 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.156765 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/head_stereo_right
+I0417 19:16:07.156773 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/head_stereo_righthttp://10.42.0.101:2379
+I0417 19:16:07.156809 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__head_stereo_right, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 7
+I0417 19:16:07.156823 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__head_stereo_right, type:CosineDataPacket, size:5
+I0417 19:16:07.156901 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/head_stereo_right, uid:b3cf0417-591d-48bc-8637-572396b768a0-8400981831882539399 topic_uid:-1
+I0417 19:16:07.157285 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/head_stereo_right, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.157296 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/head_stereo_right, uri:
+I0417 19:16:07.157315 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.157337 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/hand_left_color
+I0417 19:16:07.157344 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/hand_left_colorhttp://10.42.0.101:2379
+I0417 19:16:07.157374 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__hand_left_color, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 8
+I0417 19:16:07.157387 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__hand_left_color, type:CosineDataPacket, size:5
+I0417 19:16:07.157447 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/hand_left_color, uid:2ebb14ed-cc3c-4a2f-9f44-6a9418c9cf67-16768487626907404343 topic_uid:-1
+I0417 19:16:07.157828 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/hand_left_color, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.157838 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/hand_left_color, uri:
+I0417 19:16:07.157855 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.157887 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/hand_right_color
+I0417 19:16:07.157894 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/hand_right_colorhttp://10.42.0.101:2379
+I0417 19:16:07.157922 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__hand_right_color, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 9
+I0417 19:16:07.157931 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__hand_right_color, type:CosineDataPacket, size:5
+I0417 19:16:07.157994 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/hand_right_color, uid:1eb05ff9-2f8a-4c48-9582-446fee117e01-8629761233962563373 topic_uid:-1
+I0417 19:16:07.158465 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/hand_right_color, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.158478 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/hand_right_color, uri:
+I0417 19:16:07.158495 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.158516 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/head_color
+I0417 19:16:07.158524 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/head_colorhttp://10.42.0.101:2379
+I0417 19:16:07.158552 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__head_color, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 10
+I0417 19:16:07.158564 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__head_color, type:CosineDataPacket, size:5
+I0417 19:16:07.158631 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/head_color, uid:2fa47ede-3cd6-45fe-ab87-29d208b81f03-2515219504367417955 topic_uid:-1
+I0417 19:16:07.159093 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/head_color, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.159106 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/head_color, uri:
+I0417 19:16:07.159130 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.159152 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/head_depth
+I0417 19:16:07.159158 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/head_depthhttp://10.42.0.101:2379
+I0417 19:16:07.159188 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__head_depth, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 11
+I0417 19:16:07.159199 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__head_depth, type:CosineDataPacket, size:5
+I0417 19:16:07.159264 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/head_depth, uid:1317dccf-0431-4d91-a6e2-edc05d41e92a-14849645885661810178 topic_uid:-1
+I0417 19:16:07.159643 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/head_depth, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.159652 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/head_depth, uri:
+I0417 19:16:07.159668 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.159688 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/hand_left_depth
+I0417 19:16:07.159694 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/hand_left_depthhttp://10.42.0.101:2379
+I0417 19:16:07.160190 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__hand_left_depth, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 12
+I0417 19:16:07.160216 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__hand_left_depth, type:CosineDataPacket, size:5
+I0417 19:16:07.160317 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/hand_left_depth, uid:4471aaed-f421-44ac-8ac4-63f87722ba36-13237741933269507762 topic_uid:-1
+I0417 19:16:07.160720 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/hand_left_depth, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.160730 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/hand_left_depth, uri:
+I0417 19:16:07.160754 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.160786 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/hand_right_depth
+I0417 19:16:07.160794 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/hand_right_depthhttp://10.42.0.101:2379
+I0417 19:16:07.160825 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__hand_right_depth, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 13
+I0417 19:16:07.160837 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__hand_right_depth, type:CosineDataPacket, size:5
+I0417 19:16:07.160898 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/hand_right_depth, uid:e8fb43a0-6fe7-4e5d-a5ce-22ab271f846f-17867573658284279546 topic_uid:-1
+I0417 19:16:07.161279 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/hand_right_depth, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.161289 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/hand_right_depth, uri:
+I0417 19:16:07.161309 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.161338 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/hand_left_upper_color
+I0417 19:16:07.161345 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/hand_left_upper_colorhttp://10.42.0.101:2379
+I0417 19:16:07.161377 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__hand_left_upper_color, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 14
+I0417 19:16:07.161392 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__hand_left_upper_color, type:CosineDataPacket, size:5
+I0417 19:16:07.161455 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/hand_left_upper_color, uid:7dff107b-4f7f-4e35-bc63-81046ccdb375-10419009240684809358 topic_uid:-1
+I0417 19:16:07.161913 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/hand_left_upper_color, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.161926 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/hand_left_upper_color, uri:
+I0417 19:16:07.161945 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.161966 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/hand_right_upper_color
+I0417 19:16:07.161973 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/hand_right_upper_colorhttp://10.42.0.101:2379
+I0417 19:16:07.162001 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__hand_right_upper_color, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 15
+I0417 19:16:07.162012 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__hand_right_upper_color, type:CosineDataPacket, size:5
+I0417 19:16:07.162074 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/hand_right_upper_color, uid:43055568-a370-4517-8f97-3e81a94edba8-14436869942545931775 topic_uid:-1
+I0417 19:16:07.162456 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/hand_right_upper_color, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.162464 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/hand_right_upper_color, uri:
+I0417 19:16:07.162482 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.162504 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/hand_left_lower_color
+I0417 19:16:07.162511 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/hand_left_lower_colorhttp://10.42.0.101:2379
+I0417 19:16:07.162537 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__hand_left_lower_color, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 16
+I0417 19:16:07.162547 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__hand_left_lower_color, type:CosineDataPacket, size:5
+I0417 19:16:07.162604 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/hand_left_lower_color, uid:b2d8bda4-00e4-437d-9b08-035e9237888a-4503626684902531612 topic_uid:-1
+I0417 19:16:07.162997 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/hand_left_lower_color, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.163008 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/hand_left_lower_color, uri:
+I0417 19:16:07.163026 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.163048 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/hand_right_lower_color
+I0417 19:16:07.163054 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/hand_right_lower_colorhttp://10.42.0.101:2379
+I0417 19:16:07.163079 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__hand_right_lower_color, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 17
+I0417 19:16:07.163090 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__hand_right_lower_color, type:CosineDataPacket, size:5
+I0417 19:16:07.163152 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/hand_right_lower_color, uid:8a9c4e58-c368-46da-8104-d03239940b38-8186110446424813557 topic_uid:-1
+I0417 19:16:07.163880 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/hand_right_lower_color, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.163894 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/hand_right_lower_color, uri:
+I0417 19:16:07.163918 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.163942 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/hand_left_upper_depth
+I0417 19:16:07.163950 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/hand_left_upper_depthhttp://10.42.0.101:2379
+I0417 19:16:07.163985 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__hand_left_upper_depth, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 18
+I0417 19:16:07.163998 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__hand_left_upper_depth, type:CosineDataPacket, size:5
+I0417 19:16:07.164073 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/hand_left_upper_depth, uid:f86eb97d-3aec-48eb-b0b9-fbbd0060c26c-12072037676595526463 topic_uid:-1
+I0417 19:16:07.164522 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/hand_left_upper_depth, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.164533 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/hand_left_upper_depth, uri:
+I0417 19:16:07.164554 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.164575 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/hand_right_upper_depth
+I0417 19:16:07.164582 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/hand_right_upper_depthhttp://10.42.0.101:2379
+I0417 19:16:07.164613 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__hand_right_upper_depth, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 19
+I0417 19:16:07.164625 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__hand_right_upper_depth, type:CosineDataPacket, size:5
+I0417 19:16:07.165021 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/hand_right_upper_depth, uid:5cc90a09-58da-4798-8a3e-b73d039e7a4b-15534589775061933553 topic_uid:-1
+I0417 19:16:07.165594 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/hand_right_upper_depth, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.165608 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/hand_right_upper_depth, uri:
+I0417 19:16:07.165638 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.165664 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/hand_left_lower_depth
+I0417 19:16:07.165673 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/hand_left_lower_depthhttp://10.42.0.101:2379
+I0417 19:16:07.165714 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__hand_left_lower_depth, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 20
+I0417 19:16:07.165729 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__hand_left_lower_depth, type:CosineDataPacket, size:5
+I0417 19:16:07.165804 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/hand_left_lower_depth, uid:0805468b-bad1-461b-88a2-4e7cbda299ae-14499789538593900557 topic_uid:-1
+I0417 19:16:07.166188 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/hand_left_lower_depth, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.166198 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/hand_left_lower_depth, uri:
+I0417 19:16:07.166218 255886 cosine_bus_manager.cpp:76] [cosine_internal][CosineBusManager] cosine bus already initialised
+I0417 19:16:07.166242 255886 cosine_bus_manager.cpp:351] [cosine_internal][CosineBusManager] create default subscriber. topic name:/camera/hand_right_lower_depth
+I0417 19:16:07.166249 255886 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/camera/hand_right_lower_depthhttp://10.42.0.101:2379
+I0417 19:16:07.166280 255886 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___camera__hand_right_lower_depth, type CosineDataPacket, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 0, enable_event_sync_subscriber 0], buffer id = 21
+I0417 19:16:07.166292 255886 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___camera__hand_right_lower_depth, type:CosineDataPacket, size:5
+I0417 19:16:07.166363 255886 node_impl.cc:344] [aorta]CreateSubscriber topic:/camera/hand_right_lower_depth, uid:7408f002-9212-48d1-b12b-1def3f77fd0b-9839082178762803487 topic_uid:-1
+I0417 19:16:07.166741 255886 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/camera/hand_right_lower_depth, type:CosineDataPacket, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0417 19:16:07.166751 255886 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/camera/hand_right_lower_depth, uri:
+I0417 19:16:07.167701 255950 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /gdk/config_response, local d2379|python3.10|p255886|n0|s0|c0, peer d2379|gdk_service|p9013|n0|/gdk/config_response|p0
+I0417 19:16:07.167821 255932 centralized_discovery.cc:733] [aorta]subscriber uid:9425cf07-3301-4104-9e8a-e87c401a4323-3551884323222435368 topic:/gdk/camera_conf_response
+I0417 19:16:07.169407 255950 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /gdk/camera_conf_response, local d2379|python3.10|p255886|n0|s1|c0, peer d2379|gdk_service|p9013|n0|/gdk/camera_conf_response|p1
+I0417 19:16:07.170125 255932 centralized_discovery.cc:733] [aorta]subscriber uid:90c027ab-a1bf-42ad-bc71-36f653aab206-10407449922038425096 topic:/camera/head_back_fisheye
+I0417 19:16:07.171028 255932 centralized_discovery.cc:733] [aorta]subscriber uid:01e3396c-a90a-434f-a539-982fd33333cb-14591831445956696588 topic:/camera/head_left_fisheye
+I0417 19:16:07.172417 255932 centralized_discovery.cc:733] [aorta]subscriber uid:142f30a8-1e3f-4fbb-a847-6406b44d5f30-11724137809755197201 topic:/camera/head_right_fisheye
+I0417 19:16:07.173237 255932 centralized_discovery.cc:733] [aorta]subscriber uid:286b4559-5cc1-49e0-9abe-6e15254b256b-2772564262404746643 topic:/camera/head_stereo_left
+I0417 19:16:07.175411 255950 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /camera/head_stereo_left, local d2379|python3.10|p255886|n0|s5|c0, peer d2379|cosine_runner|p9381|n0|/camera/head_stereo_left|p3
+I0417 19:16:07.175503 255932 centralized_discovery.cc:733] [aorta]subscriber uid:b3cf0417-591d-48bc-8637-572396b768a0-8400981831882539399 topic:/camera/head_stereo_right
+I0417 19:16:07.178819 255950 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /camera/head_stereo_right, local d2379|python3.10|p255886|n0|s6|c0, peer d2379|cosine_runner|p9381|n0|/camera/head_stereo_right|p0
+I0417 19:16:07.178982 255932 centralized_discovery.cc:733] [aorta]subscriber uid:2ebb14ed-cc3c-4a2f-9f44-6a9418c9cf67-16768487626907404343 topic:/camera/hand_left_color
+I0417 19:16:07.180334 255950 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /camera/hand_left_color, local d2379|python3.10|p255886|n0|s7|c0, peer d2379|cosine_runner|p9381|n0|/camera/hand_left_color|p4
+I0417 19:16:07.180401 255932 centralized_discovery.cc:733] [aorta]subscriber uid:1eb05ff9-2f8a-4c48-9582-446fee117e01-8629761233962563373 topic:/camera/hand_right_color
+I0417 19:16:07.194298 255950 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /camera/hand_right_color, local d2379|python3.10|p255886|n0|s8|c0, peer d2379|cosine_runner|p9381|n0|/camera/hand_right_color|p5
+I0417 19:16:07.194414 255932 centralized_discovery.cc:733] [aorta]subscriber uid:2fa47ede-3cd6-45fe-ab87-29d208b81f03-2515219504367417955 topic:/camera/head_color
+I0417 19:16:07.195971 255950 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /camera/head_color, local d2379|python3.10|p255886|n0|s9|c0, peer d2379|cosine_runner|p9381|n0|/camera/head_color|p2
+I0417 19:16:07.196044 255932 centralized_discovery.cc:733] [aorta]subscriber uid:1317dccf-0431-4d91-a6e2-edc05d41e92a-14849645885661810178 topic:/camera/head_depth
+I0417 19:16:07.197413 255950 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /camera/head_depth, local d2379|python3.10|p255886|n0|s10|c0, peer d2379|cosine_runner|p9381|n0|/camera/head_depth|p1
+I0417 19:16:07.197480 255932 centralized_discovery.cc:733] [aorta]subscriber uid:4471aaed-f421-44ac-8ac4-63f87722ba36-13237741933269507762 topic:/camera/hand_left_depth
+I0417 19:16:07.198500 255932 centralized_discovery.cc:733] [aorta]subscriber uid:e8fb43a0-6fe7-4e5d-a5ce-22ab271f846f-17867573658284279546 topic:/camera/hand_right_depth
+I0417 19:16:07.199838 255932 centralized_discovery.cc:733] [aorta]subscriber uid:7dff107b-4f7f-4e35-bc63-81046ccdb375-10419009240684809358 topic:/camera/hand_left_upper_color
+I0417 19:16:07.200620 255932 centralized_discovery.cc:733] [aorta]subscriber uid:43055568-a370-4517-8f97-3e81a94edba8-14436869942545931775 topic:/camera/hand_right_upper_color
+I0417 19:16:07.201525 255932 centralized_discovery.cc:733] [aorta]subscriber uid:b2d8bda4-00e4-437d-9b08-035e9237888a-4503626684902531612 topic:/camera/hand_left_lower_color
+I0417 19:16:07.202342 255932 centralized_discovery.cc:733] [aorta]subscriber uid:8a9c4e58-c368-46da-8104-d03239940b38-8186110446424813557 topic:/camera/hand_right_lower_color
+I0417 19:16:07.203243 255932 centralized_discovery.cc:733] [aorta]subscriber uid:f86eb97d-3aec-48eb-b0b9-fbbd0060c26c-12072037676595526463 topic:/camera/hand_left_upper_depth
+I0417 19:16:07.204172 255932 centralized_discovery.cc:733] [aorta]subscriber uid:5cc90a09-58da-4798-8a3e-b73d039e7a4b-15534589775061933553 topic:/camera/hand_right_upper_depth
+I0417 19:16:07.205277 255932 centralized_discovery.cc:733] [aorta]subscriber uid:0805468b-bad1-461b-88a2-4e7cbda299ae-14499789538593900557 topic:/camera/hand_left_lower_depth
+I0417 19:16:07.206712 255932 centralized_discovery.cc:733] [aorta]subscriber uid:7408f002-9212-48d1-b12b-1def3f77fd0b-9839082178762803487 topic:/camera/hand_right_lower_depth
+I0417 19:16:09.169288 255949 shm_channel.cc:107] [aorta]send shared memory pool fd 16, uuid 8213, topic /gdk/config_request
+I0417 19:16:09.202323 255886 sensors.cpp:97] [GDK]Camera destructor
+I0417 19:16:09.202414 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__head_stereo_right release.
+I0417 19:16:09.204460 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:b3cf0417-591d-48bc-8637-572396b768a0-8400981831882539399
+I0417 19:16:09.204808 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/head_stereo_righthttp://10.42.0.101:2379 release.
+I0417 19:16:09.204824 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/head_stereo_right
+I0417 19:16:09.204828 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.204831 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.204866 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__head_stereo_left release.
+I0417 19:16:09.206106 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:286b4559-5cc1-49e0-9abe-6e15254b256b-2772564262404746643
+I0417 19:16:09.206382 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/head_stereo_lefthttp://10.42.0.101:2379 release.
+I0417 19:16:09.206395 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/head_stereo_left
+I0417 19:16:09.206399 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.206403 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.206439 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__head_right_fisheye release.
+I0417 19:16:09.206458 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:142f30a8-1e3f-4fbb-a847-6406b44d5f30-11724137809755197201
+I0417 19:16:09.206549 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/head_right_fisheyehttp://10.42.0.101:2379 release.
+I0417 19:16:09.206555 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/head_right_fisheye
+I0417 19:16:09.206558 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.206561 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.206580 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__head_left_fisheye release.
+I0417 19:16:09.206596 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:01e3396c-a90a-434f-a539-982fd33333cb-14591831445956696588
+I0417 19:16:09.206686 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/head_left_fisheyehttp://10.42.0.101:2379 release.
+I0417 19:16:09.206692 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/head_left_fisheye
+I0417 19:16:09.206694 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.206697 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.206718 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__head_depth release.
+I0417 19:16:09.209079 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:1317dccf-0431-4d91-a6e2-edc05d41e92a-14849645885661810178
+I0417 19:16:09.209396 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/head_depthhttp://10.42.0.101:2379 release.
+I0417 19:16:09.209409 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/head_depth
+I0417 19:16:09.209414 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.209416 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.209453 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__head_color release.
+I0417 19:16:09.209476 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:2fa47ede-3cd6-45fe-ab87-29d208b81f03-2515219504367417955
+I0417 19:16:09.209645 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/head_colorhttp://10.42.0.101:2379 release.
+I0417 19:16:09.209653 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/head_color
+I0417 19:16:09.209656 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.209661 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.209685 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__head_back_fisheye release.
+I0417 19:16:09.209702 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:90c027ab-a1bf-42ad-bc71-36f653aab206-10407449922038425096
+I0417 19:16:09.209789 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/head_back_fisheyehttp://10.42.0.101:2379 release.
+I0417 19:16:09.209795 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/head_back_fisheye
+I0417 19:16:09.209800 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.209801 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.210422 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__hand_right_upper_depth release.
+I0417 19:16:09.210453 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:5cc90a09-58da-4798-8a3e-b73d039e7a4b-15534589775061933553
+I0417 19:16:09.210556 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/hand_right_upper_depthhttp://10.42.0.101:2379 release.
+I0417 19:16:09.210564 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/hand_right_upper_depth
+I0417 19:16:09.210567 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.210570 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.210594 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__hand_right_upper_color release.
+I0417 19:16:09.210610 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:43055568-a370-4517-8f97-3e81a94edba8-14436869942545931775
+I0417 19:16:09.210697 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/hand_right_upper_colorhttp://10.42.0.101:2379 release.
+I0417 19:16:09.210703 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/hand_right_upper_color
+I0417 19:16:09.210706 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.210709 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.210729 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__hand_right_lower_depth release.
+I0417 19:16:09.210743 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:7408f002-9212-48d1-b12b-1def3f77fd0b-9839082178762803487
+I0417 19:16:09.210830 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/hand_right_lower_depthhttp://10.42.0.101:2379 release.
+I0417 19:16:09.210836 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/hand_right_lower_depth
+I0417 19:16:09.210839 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.210842 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.210862 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__hand_right_lower_color release.
+I0417 19:16:09.210875 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:8a9c4e58-c368-46da-8104-d03239940b38-8186110446424813557
+I0417 19:16:09.210986 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/hand_right_lower_colorhttp://10.42.0.101:2379 release.
+I0417 19:16:09.210994 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/hand_right_lower_color
+I0417 19:16:09.210996 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.211000 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.211015 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__hand_right_depth release.
+I0417 19:16:09.211027 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:e8fb43a0-6fe7-4e5d-a5ce-22ab271f846f-17867573658284279546
+I0417 19:16:09.211113 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/hand_right_depthhttp://10.42.0.101:2379 release.
+I0417 19:16:09.211119 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/hand_right_depth
+I0417 19:16:09.211122 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.211125 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.211140 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__hand_right_color release.
+I0417 19:16:09.211160 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:1eb05ff9-2f8a-4c48-9582-446fee117e01-8629761233962563373
+I0417 19:16:09.211371 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/hand_right_colorhttp://10.42.0.101:2379 release.
+I0417 19:16:09.211381 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/hand_right_color
+I0417 19:16:09.211385 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.211388 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.211407 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__hand_left_upper_depth release.
+I0417 19:16:09.211419 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:f86eb97d-3aec-48eb-b0b9-fbbd0060c26c-12072037676595526463
+I0417 19:16:09.211508 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/hand_left_upper_depthhttp://10.42.0.101:2379 release.
+I0417 19:16:09.211515 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/hand_left_upper_depth
+I0417 19:16:09.211519 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.211521 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.211535 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__hand_left_upper_color release.
+I0417 19:16:09.211545 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:7dff107b-4f7f-4e35-bc63-81046ccdb375-10419009240684809358
+I0417 19:16:09.211647 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/hand_left_upper_colorhttp://10.42.0.101:2379 release.
+I0417 19:16:09.211654 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/hand_left_upper_color
+I0417 19:16:09.211658 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.211660 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.211678 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__hand_left_lower_depth release.
+I0417 19:16:09.211688 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:0805468b-bad1-461b-88a2-4e7cbda299ae-14499789538593900557
+I0417 19:16:09.211776 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/hand_left_lower_depthhttp://10.42.0.101:2379 release.
+I0417 19:16:09.211782 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/hand_left_lower_depth
+I0417 19:16:09.211786 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.211788 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.211802 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__hand_left_lower_color release.
+I0417 19:16:09.211812 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:b2d8bda4-00e4-437d-9b08-035e9237888a-4503626684902531612
+I0417 19:16:09.211897 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/hand_left_lower_colorhttp://10.42.0.101:2379 release.
+I0417 19:16:09.211903 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/hand_left_lower_color
+I0417 19:16:09.211906 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.211910 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.211922 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__hand_left_depth release.
+I0417 19:16:09.211933 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:4471aaed-f421-44ac-8ac4-63f87722ba36-13237741933269507762
+I0417 19:16:09.212023 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/hand_left_depthhttp://10.42.0.101:2379 release.
+I0417 19:16:09.212029 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/hand_left_depth
+I0417 19:16:09.212033 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.212035 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.212049 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___camera__hand_left_color release.
+I0417 19:16:09.212438 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:2ebb14ed-cc3c-4a2f-9f44-6a9418c9cf67-16768487626907404343
+I0417 19:16:09.212643 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/camera/hand_left_colorhttp://10.42.0.101:2379 release.
+I0417 19:16:09.212652 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /camera/hand_left_color
+I0417 19:16:09.212656 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.212659 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.247063 255886 publisher_impl.cc:32] [aorta]Publisher destory, UnRegisterPublisher uid:b4baf58a-c318-4867-aae8-01e41429880b-9117180461459404870
+I0417 19:16:09.247634 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___gdk__camera_conf_response release.
+I0417 19:16:09.247681 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:9425cf07-3301-4104-9e8a-e87c401a4323-3551884323222435368
+I0417 19:16:09.247875 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/gdk/camera_conf_responsehttp://10.42.0.101:2379 release.
+I0417 19:16:09.247887 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /gdk/camera_conf_response
+I0417 19:16:09.247891 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.247895 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.247908 255886 publisher_impl.cc:32] [aorta]Publisher destory, UnRegisterPublisher uid:4f793519-96c5-40a3-9034-d99b34d4a52f-4991715019463590898
+I0417 19:16:09.259219 255949 communicator_manager.cc:46] [aorta]pub-loop2379-0 exit
+I0417 19:16:09.260808 255886 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___gdk__config_response release.
+I0417 19:16:09.260841 255886 dynamic_object.cpp:503] [cosine_internal][DynamicObject] close  success.
+I0417 19:16:09.260848 255886 dynamic_object_manager.cpp:58] [cosine_internal][DynamicObject] bus_buffer___gdk__config_response erase so[]
+I0417 19:16:09.260879 255886 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:277ec6a8-7116-4a8a-9b6c-9142171cecf4-9533047780102618842
+I0417 19:16:09.280958 255950 communicator_manager.cc:46] [aorta]sub-loop2379-0 exit
+I0417 19:16:09.281206 255886 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/gdk/config_responsehttp://10.42.0.101:2379 release.
+I0417 19:16:09.281224 255886 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /gdk/config_response
+I0417 19:16:09.281229 255886 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0417 19:16:09.281232 255886 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0417 19:16:09.281334 255886 cosine_bus_manager.cpp:177] [cosine_internal][CosineBusManager] release.
+I0417 19:16:09.281354 255886 scheduler.cpp:144] [cosine_internal]Shutdown: Stopping 1 processor threads
+I0417 19:16:09.281363 255886 processor.cpp:73] [cosine_internal]processor 255924 stopping... waiting for thread to join...
+I0417 19:16:09.281378 255924 processor.cpp:60] [cosine_internal]processor_tid: 255924 stopped
+I0417 19:16:09.281425 255886 scheduler.cpp:148] [cosine_internal]Shutdown: All processor threads stopped
+I0417 19:16:09.281431 255886 scheduler.cpp:161] [cosine_internal]Shutdown: Force releasing locks for 0 coroutines
+I0417 19:16:09.281437 255886 aorta_component.cpp:140] [cosine_internal][AortaComponent] release.
+I0417 19:16:09.281510 255933 executor_impl.cc:184] [aorta]aorta-dispatch0 stop spinning
+I0417 19:16:09.299597 255886 dynamic_object.cpp:503] [cosine_internal][DynamicObject] close libptp_clock_time.so success.
+I0417 19:16:09.299623 255886 aorta_component.cpp:140] [cosine_internal][AortaComponent] release.
+I0417 19:16:09.299629 255886 aorta_component.cpp:35] [cosine_internal][AortaComponent] destruct. aorta_map_ size:0 ,aorta_callback_info_map_ size:0
+I0417 19:16:09.299635 255886 aorta_resource_loader.cpp:31] [cosine_internal][AortaResourceLoader] destruct.
+I0417 19:16:09.299641 255886 dynamic_object.cpp:505] [cosine_internal][DynamicObject] keeping libdynamic_aorta.so loaded for safety (detached mode).
+I0417 19:16:09.299861 255886 cosine_bus_manager.cpp:43] [cosine_internal][CosineBusManager] destruct.
