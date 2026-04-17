@@ -1,0 +1,271 @@
+{
+  "version": 1,
+  "points": [
+    {
+      "name": "J_PICK_BOTH",
+      "type": "joint",
+      "scope": "both",
+      "created_at": "2025-08-27T00:30:26",
+      "joint_positions": {
+        "idx21_arm_l_joint1": 0.5939481731635595,
+        "idx22_arm_l_joint2": -1.7436863479178597,
+        "idx23_arm_l_joint3": -0.35871229923612913,
+        "idx24_arm_l_joint4": -0.15933218759270049,
+        "idx25_arm_l_joint5": 0.41844694922338466,
+        "idx26_arm_l_joint6": 0.19936141625257628,
+        "idx27_arm_l_joint7": -0.6018806115232477,
+        "idx61_arm_r_joint1": -1.044309952205652,
+        "idx62_arm_r_joint2": -1.3408310350860093,
+        "idx63_arm_r_joint3": 1.2743447124715739,
+        "idx64_arm_r_joint4": -0.8928695764502107,
+        "idx65_arm_r_joint5": -1.122671882700385,
+        "idx66_arm_r_joint6": 0.19231085705625692,
+        "idx67_arm_r_joint7": 0.9515695084591376
+      },
+      "waist_positions": {
+        "idx01_body_joint1": -0.7019466622285049,
+        "idx02_body_joint2": 2.262538871044795,
+        "idx03_body_joint3": -1.2520262409113594,
+        "idx04_body_joint4": -0.010832026123844112,
+        "idx05_body_joint5": 0.06643003631702628
+      },
+      "grippers": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "note": ""
+    },
+    {
+      "name": "L_PICK_BOTH",
+      "type": "linear",
+      "scope": "both",
+      "created_at": "2025-08-26T23:48:13",
+      "poses": {
+        "left": {
+          "position": [
+            0.7718101032291353,
+            0.27058630534631134,
+            0.26727049108102235
+          ],
+          "orientation": [
+            -0.6650542798213844,
+            0.7450018921610543,
+            0.026333665827682883,
+            0.04451430794458847
+          ]
+        },
+        "right": {
+          "position": [
+            0.7523350522940333,
+            -0.2875084655588215,
+            0.25732494396685673
+          ],
+          "orientation": [
+            0.683559111796297,
+            0.7276827154098583,
+            0.04980100661241605,
+            -0.02728857113120536
+          ]
+        }
+      },
+      "grippers": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "note": ""
+    },
+    {
+      "name": "L_LIFT_BOTH",
+      "type": "linear",
+      "scope": "both",
+      "created_at": "2025-08-26T23:49:31",
+      "poses": {
+        "left": {
+          "position": [
+            0.78237878850499,
+            0.2738278282825243,
+            0.41105247172822956
+          ],
+          "orientation": [
+            -0.6605874847248075,
+            0.7451877329164448,
+            -0.03778572949934509,
+            0.08301600075891813
+          ]
+        },
+        "right": {
+          "position": [
+            0.7649230977588708,
+            -0.28344041757308,
+            0.4245896761794416
+          ],
+          "orientation": [
+            0.6831517287710756,
+            0.7259354926180602,
+            0.07906289874092971,
+            -0.008392501244962224
+          ]
+        }
+      },
+      "grippers": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "note": ""
+    },
+    {
+      "name": "J_HOME_BOTH",
+      "type": "joint",
+      "scope": "both",
+      "created_at": "2025-08-27T00:23:58",
+      "joint_positions": {
+        "idx21_arm_l_joint1": 1.570796,
+        "idx22_arm_l_joint2": -1.570796,
+        "idx23_arm_l_joint3": -1.570796,
+        "idx24_arm_l_joint4": -1.570796,
+        "idx25_arm_l_joint5": 0.0,
+        "idx26_arm_l_joint6": -0.0,
+        "idx27_arm_l_joint7": 0.0,
+        "idx61_arm_r_joint1": -1.570797,
+        "idx62_arm_r_joint2": -1.570796,
+        "idx63_arm_r_joint3": 1.570796,
+        "idx64_arm_r_joint4": -1.570796,
+        "idx65_arm_r_joint5": 0.0,
+        "idx66_arm_r_joint6": 0.0,
+        "idx67_arm_r_joint7": -0.0
+      },
+      "waist_positions": {
+        "idx01_body_joint1": -0.698016,
+        "idx02_body_joint2": 1.570727,
+        "idx03_body_joint3": -0.872522,
+        "idx04_body_joint4": 0.0,
+        "idx05_body_joint5": 0.0
+      },
+      "grippers": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "note": "HOME seeded from measured constants"
+    },
+    {
+      "name": "J_PLACE_READY_BOTH",
+      "type": "joint",
+      "scope": "both",
+      "created_at": "2025-08-27T00:50:26",
+      "joint_positions": {
+        "idx21_arm_l_joint1": 0.9572701246147013,
+        "idx22_arm_l_joint2": -1.611303606186247,
+        "idx23_arm_l_joint3": -0.9801657865593033,
+        "idx24_arm_l_joint4": -0.6686547952199097,
+        "idx25_arm_l_joint5": 1.1642281412977014,
+        "idx26_arm_l_joint6": 0.34000013046890537,
+        "idx27_arm_l_joint7": -1.2212625057292819,
+        "idx61_arm_r_joint1": -1.3343531620505005,
+        "idx62_arm_r_joint2": -1.3562195788128142,
+        "idx63_arm_r_joint3": 1.3754630482175088,
+        "idx64_arm_r_joint4": -1.2939928492039061,
+        "idx65_arm_r_joint5": -1.1732889343796453,
+        "idx66_arm_r_joint6": 0.2828152441725135,
+        "idx67_arm_r_joint7": 1.3899999130277063
+      },
+      "grippers": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "note": ""
+    },
+    {
+      "name": "L_PLACE_BOTH",
+      "type": "linear",
+      "scope": "both",
+      "created_at": "2025-08-27T00:51:04",
+      "poses": {
+        "left": {
+          "position": [
+            0.6913743028554152,
+            0.1583334031250395,
+            0.7242354151949086
+          ],
+          "orientation": [
+            -0.6833900389789992,
+            0.727796445659041,
+            -0.03966456255059905,
+            0.041438035523165946
+          ]
+        },
+        "right": {
+          "position": [
+            0.6773944125614395,
+            -0.27674335637750946,
+            0.7111440129680651
+          ],
+          "orientation": [
+            0.7641779080335009,
+            0.6385419912057131,
+            0.09075608905712722,
+            0.0077189791838154845
+          ]
+        }
+      },
+      "grippers": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "note": ""
+    },
+    {
+      "name": "J_PICK_WAIST_BOTH",
+      "type": "joint",
+      "scope": "both",
+      "created_at": "2025-08-26T23:28:15",
+      "joint_positions": {
+        "idx21_arm_l_joint1": 1.5707957275836513,
+        "idx22_arm_l_joint2": -1.5707965265319783,
+        "idx23_arm_l_joint3": -1.570795368056904,
+        "idx24_arm_l_joint4": -1.5707956077414023,
+        "idx25_arm_l_joint5": 7.190534943213943e-07,
+        "idx26_arm_l_joint6": 9.587379924285258e-07,
+        "idx27_arm_l_joint7": 4.793689962142629e-07,
+        "idx61_arm_r_joint1": -1.5707957275836513,
+        "idx62_arm_r_joint2": -1.5707955278465695,
+        "idx63_arm_r_joint3": 1.570795368056904,
+        "idx64_arm_r_joint4": -1.5707968061638928,
+        "idx65_arm_r_joint5": -9.587379924285258e-07,
+        "idx66_arm_r_joint6": 1.1984224905356572e-06,
+        "idx67_arm_r_joint7": -0.0
+      },
+      "grippers": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "note": ""
+    },
+    {
+      "name": "J_PICK_APPROACH_BOTH",
+      "type": "joint",
+      "scope": "both",
+      "created_at": "2025-08-26T23:30:05",
+      "joint_positions": {
+        "idx21_arm_l_joint1": 0.48043539249375783,
+        "idx22_arm_l_joint2": -1.8376973991362562,
+        "idx23_arm_l_joint3": -0.4205336424639053,
+        "idx24_arm_l_joint4": -0.09611420279445403,
+        "idx25_arm_l_joint5": 0.4598977466415339,
+        "idx26_arm_l_joint6": 0.22826736672429634,
+        "idx27_arm_l_joint7": -0.7283069937398163,
+        "idx61_arm_r_joint1": -0.6421772881355947,
+        "idx62_arm_r_joint2": -1.5695236021099477,
+        "idx63_arm_r_joint3": 1.487536643318426,
+        "idx64_arm_r_joint4": -0.43080987563575046,
+        "idx65_arm_r_joint5": -1.5151209734675835,
+        "idx66_arm_r_joint6": 0.33999965109990915,
+        "idx67_arm_r_joint7": 0.972399289767138
+      },
+      "grippers": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "note": ""
+    }
+  ]
+}

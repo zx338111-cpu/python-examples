@@ -1,0 +1,28 @@
+calibration:
+  file: calibration.yaml
+cameras:
+  enabled:
+  - kHeadColor
+  - kHeadDepth
+  - kHandLeftColor
+  - kHandRightColor
+  reconnect_interval_s: 3.0
+  timeout_ms: 1000.0
+depth:
+  max_depth_m: 3.0
+  method: depth_camera
+  min_depth_m: 0.1
+grasp_offset:
+  z_approach_m: 0.1
+logging:
+  level: INFO
+  log_file: vision.log
+model:
+  conf: 0.5
+  hot_reload_interval_s: 5.0
+  nms: 0.45
+  path: model.pt
+  target_classes:
+  - bottle
+  type: yolo
+  use_tensorrt: false

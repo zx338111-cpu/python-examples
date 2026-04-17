@@ -127,6 +127,26 @@ def now_iso() -> str:
     return dt.datetime.now().isoformat(timespec="seconds")
 
 
+
+
+def is_gdk_success(result: Any) -> bool:
+    """兼容 agibot_gdk Python 绑定的多种成功返回形式。"""
+    if result is None:
+        return True
+
+    name = getattr(result, "name", None)
+    if isinstance(name, str) and name == "kSuccess":
+        return True
+
+    text = str(result)
+    if text in ("kSuccess", "GDKRes.kSuccess"):
+        return True
+
+    try:
+        return int(result) == 0
+    except Exception:
+        return False
+
 def atomic_write_json(path: str, payload: Dict[str, Any]) -> None:
     folder = os.path.dirname(os.path.abspath(path)) or "."
     os.makedirs(folder, exist_ok=True)
@@ -332,6 +352,11 @@ class TeachConfig:
     min_motion_duration_s: float = 0.20
     joint_jog_duration_s: float = 0.60
     linear_jog_duration_s: float = 0.80
+    joint_segment_max_delta_rad: float = 0.35
+    joint_goal_tolerance_rad: float = 0.03
+    joint_timeout_margin_s: float = 3.0
+    joint_poll_hz: float = 20.0
+    joint_retry_speed_scale: float = 0.6
     gripper_open_rad: float = 0.0
     gripper_close_rad: float = 0.6
 
@@ -371,7 +396,7 @@ class G2Backend:
                 "或使用 --simulate 离线体验。"
             )
         result = agibot_gdk.gdk_init()
-        if result != agibot_gdk.GDKRes.kSuccess:
+        if not is_gdk_success(result):
             raise RuntimeError(f"GDK 初始化失败: {result}")
         self._gdk_inited = True
         self.robot = agibot_gdk.Robot()
@@ -394,7 +419,7 @@ class G2Backend:
         if self._gdk_inited and HAS_GDK:
             try:
                 result = agibot_gdk.gdk_release()
-                if result == agibot_gdk.GDKRes.kSuccess:
+                if is_gdk_success(result):
                     print("[OK] GDK 已释放")
                 else:
                     print(f"[WARN] GDK 释放返回: {result}")
@@ -625,8 +650,7 @@ class G2Backend:
         req.life_time = float(life_time_s)
         req.detail = "g2_dual_arm_teach_pendant"
         result = self.robot.joint_control_request(req)
-        # 兼容 GDKRes 或 int
-        if hasattr(agibot_gdk, "GDKRes") and result != agibot_gdk.GDKRes.kSuccess:
+        if not is_gdk_success(result):
             raise RuntimeError(f"joint_control_request 返回异常: {result}")
 
     def _send_linear_command_once(
@@ -665,7 +689,7 @@ class G2Backend:
             obj.orientation.w = float(pose["orientation"][3])
 
         result = self.robot.end_effector_pose_control(end_pose)
-        if hasattr(agibot_gdk, "GDKRes") and result != agibot_gdk.GDKRes.kSuccess:
+        if not is_gdk_success(result):
             raise RuntimeError(f"end_effector_pose_control 返回异常: {result}")
 
     def set_gripper(self, left: Optional[float] = None, right: Optional[float] = None) -> None:
@@ -685,6 +709,67 @@ class G2Backend:
         }
         self.robot.move_ee_pos(action)
 
+    def _wait_until_joint_target(
+        self,
+        target_positions: Dict[str, float],
+        timeout_s: float,
+        tolerance_rad: Optional[float] = None,
+        poll_hz: Optional[float] = None,
+    ) -> Dict[str, float]:
+        tol = float(tolerance_rad or self.cfg.joint_goal_tolerance_rad)
+        rate = float(poll_hz or self.cfg.joint_poll_hz)
+        names = list(target_positions.keys())
+        deadline = time.monotonic() + max(0.1, timeout_s)
+        last = self.get_joint_positions(names)
+        period = 1.0 / max(rate, 1.0)
+        while time.monotonic() < deadline:
+            last = self.get_joint_positions(names)
+            if all(abs(last[n] - target_positions[n]) <= tol for n in names):
+                return last
+            time.sleep(period)
+        detail = ", ".join(
+            f"{n}: cur={last[n]:.4f}, tgt={target_positions[n]:.4f}, err={last[n]-target_positions[n]:+.4f}"
+            for n in names
+        )
+        raise RuntimeError(f"关节到位超时: {detail}")
+
+    def _send_arm_joint_command_once(
+        self,
+        target_positions: Dict[str, float],
+        velocities: Dict[str, float],
+    ) -> None:
+        if self.simulate:
+            for name, pos in target_positions.items():
+                self._sim_joint_positions[name] = pos
+            return
+        if self.robot is None:
+            raise RuntimeError("机器人未初始化")
+        if not hasattr(self.robot, "move_arm_joint"):
+            raise RuntimeError("当前 agibot_gdk 未提供 move_arm_joint")
+
+        current = self.get_joint_positions(BOTH_ARM_JOINTS)
+        merged = dict(current)
+        merged.update({k: float(v) for k, v in target_positions.items() if k in BOTH_ARM_JOINTS})
+        positions = [float(merged[name]) for name in BOTH_ARM_JOINTS]
+        vel_map = {name: float(velocities.get(name, self.cfg.default_joint_speed_rad_s)) for name in BOTH_ARM_JOINTS}
+        arm_velocities = [max(0.05, vel_map[name]) for name in BOTH_ARM_JOINTS]
+        result = self.robot.move_arm_joint(positions, arm_velocities)
+        if not is_gdk_success(result):
+            raise RuntimeError(f"move_arm_joint 返回异常: {result}")
+
+    def _segment_joint_targets(
+        self,
+        current: Dict[str, float],
+        target: Dict[str, float],
+        segment_max_delta_rad: float,
+    ) -> List[Dict[str, float]]:
+        max_delta = max(abs(target[n] - current[n]) for n in target) if target else 0.0
+        segments = max(1, int(math.ceil(max_delta / max(segment_max_delta_rad, 1e-6))))
+        return [
+            {n: lerp(current[n], target[n], (i + 1) / segments) for n in target}
+            for i in range(segments)
+        ]
+
     # ----- 高层动作：关节 PTP / 直线 LINE -----
 
     def joint_ptp(
@@ -696,11 +781,10 @@ class G2Backend:
     ) -> None:
         self.ensure_safe_for_motion(linear=False)
 
-        rate = float(rate_hz or self.cfg.joint_rate_hz)
-        if rate <= 0:
-            raise ValueError("joint_rate_hz 必须大于 0")
-
         names = list(target_positions.keys())
+        if not names:
+            return
+
         current = self.get_joint_positions(names)
         limited_target: Dict[str, float] = {}
         for name, target in target_positions.items():
@@ -713,28 +797,46 @@ class G2Backend:
             else:
                 limited_target[name] = float(target)
 
-        max_delta = max(abs(limited_target[n] - current[n]) for n in names) if names else 0.0
+        max_delta = max(abs(limited_target[n] - current[n]) for n in names)
+        if max_delta < self.cfg.joint_goal_tolerance_rad:
+            print("[MOVE][JOINT] 已在目标附近，无需移动")
+            return
+
         speed = float(speed_rad_s or self.cfg.default_joint_speed_rad_s)
         auto_duration = max(self.cfg.min_motion_duration_s, max_delta / max(speed, 1e-6))
         duration = max(float(duration_s or self.cfg.default_joint_duration_s), auto_duration)
-        steps = max(1, int(math.ceil(duration * rate)))
-        dt_s = 1.0 / rate
-        life_time_s = max(self.cfg.joint_lifetime_s, 3.0 * dt_s)
 
-        velocities = {
-            n: max(0.01, abs(limited_target[n] - current[n]) / max(duration, 1e-6))
-            for n in names
-        }
+        segments = self._segment_joint_targets(current, limited_target, self.cfg.joint_segment_max_delta_rad)
+        use_arm_api = all(name in BOTH_ARM_JOINTS for name in names) and (not self.simulate) and hasattr(self.robot, "move_arm_joint")
+        print(
+            f"[MOVE][JOINT] duration={duration:.3f}s, max_delta={max_delta:.4f} rad, "
+            f"segments={len(segments)}, api={'move_arm_joint' if use_arm_api else 'joint_control_request'}"
+        )
 
-        print(f"[MOVE][JOINT] duration={duration:.3f}s, steps={steps}, max_delta={max_delta:.4f} rad")
-        next_t = time.monotonic()
-        for i in range(steps):
-            t = (i + 1) / steps
-            cmd_pos = {n: lerp(current[n], limited_target[n], t) for n in names}
-            self._send_joint_command_once(cmd_pos, velocities, life_time_s)
-            next_t = sleep_to_rate(next_t, dt_s)
+        segment_duration = max(self.cfg.min_motion_duration_s, duration / max(1, len(segments)))
+        last_start = dict(current)
+        for idx, seg_target in enumerate(segments, start=1):
+            seg_delta = max(abs(seg_target[n] - last_start[n]) for n in names)
+            seg_speed = max(0.08, seg_delta / max(segment_duration, 1e-6))
+            velocities = {n: max(0.08, abs(seg_target[n] - last_start[n]) / max(segment_duration, 1e-6)) for n in names}
+            timeout_s = max(segment_duration + self.cfg.joint_timeout_margin_s, segment_duration * 2.0)
+            try:
+                if use_arm_api:
+                    self._send_arm_joint_command_once(seg_target, velocities)
+                else:
+                    self._send_joint_command_once(seg_target, velocities, timeout_s)
+                self._wait_until_joint_target(seg_target, timeout_s + 1.0)
+            except Exception as exc:
+                retry_velocities = {n: max(0.05, velocities[n] * self.cfg.joint_retry_speed_scale) for n in names}
+                retry_timeout_s = timeout_s + 3.0
+                print(f"[WARN] 关节段 {idx}/{len(segments)} 失败，准备慢速重试: {exc}")
+                if use_arm_api:
+                    self._send_arm_joint_command_once(seg_target, retry_velocities)
+                else:
+                    self._send_joint_command_once(seg_target, retry_velocities, retry_timeout_s)
+                self._wait_until_joint_target(seg_target, retry_timeout_s + 1.0)
+            last_start = self.get_joint_positions(names)
 
-        self._send_joint_command_once(limited_target, velocities, life_time_s)
         time.sleep(min(self.cfg.hold_final_s, 0.2))
 
     def linear_ptp(

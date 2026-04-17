@@ -3,13 +3,15 @@ import math
 robot = RobotController()
 
 # 导航到地图第0个点
-robot.go(1)
+# robot.go(1)
 
 
 
-robot.go(1, high_precision=True)
+# robot.go(1, high_precision=True)
 
-robot.crab_walk(-2.0)
+#robot.crab_walk(-2.0)
+# robot.move_forward(5)
+# robot.move_forward(-5)
 
 
 
@@ -49,3 +51,12 @@ robot.crab_walk(-2.0)
 # python3 robot_controller.py --forward 2.0
 # python3 robot_controller.py --rotate 90
 # python3 robot_controller.py --rotate -45 --speed 0.3
+
+
+
+
+robot.move_forward(1.0)
+robot.rotate(0.5)
+robot.crab_walk(0.5)
+
+robot.release()
