@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-import argparse, json, math, os, time, sys
+"""
+box_align.py — 控制机器人与箱子的前后距离
+箱子摆正，机器人自动调整到标定距离
+"""
+import argparse, json, os, time, sys
 import cv2, numpy as np
 import agibot_gdk
 
@@ -8,14 +12,13 @@ CALIB_FILE = os.path.join(os.path.dirname(__file__), "calib.json")
 HEAD_CAM       = agibot_gdk.CameraType.kHeadColor
 HEAD_LOOK_DOWN = [0.0, 0.0, 0.5]
 HEAD_SPEED     = [0.2, 0.2, 0.2]
-CONF_THR  = 0.35
-TOL_DX    = 8
-TOL_DIST  = 10
-VY_BASE   = 0.06
-VX_BASE   = 0.05
-DT        = 0.12
-MAX_STEPS   = 150
-NO_BOX_MAX  = 20
+CONF_THR  = 0.25   # 低阈值提高检测率
+
+TOL_DIST  = 8      # 前后容忍（像素）
+VX_BASE   = 0.04   # 前后速度 m/s
+DT        = 0.08
+MAX_STEPS  = 150
+NO_BOX_MAX = 60    # 多帧容忍，避免漏检停止
 
 def parse_args():
     ap = argparse.ArgumentParser()
@@ -46,7 +49,7 @@ def grab_frame(camera):
     return None
 
 def detect_box(model, bgr):
-    """只检测位置和大小，不算角度（角度不稳定先去掉）"""
+    """检测箱子，返回bh（高度像素），越大=越近"""
     results = model(bgr, conf=CONF_THR, verbose=False)
     best, best_conf = None, 0.0
     for r in results:
@@ -65,40 +68,38 @@ def detect_box(model, bgr):
     bh = y2-y1
     return cx, cy, bw, bh, conf
 
-def draw_debug(bgr, det, calib, step):
+def draw_debug(bgr, det, calib, step, bh_smooth):
     vis = bgr.copy()
     h, w = vis.shape[:2]
-    cx_ref = calib["cx"]
     bh_ref = calib["bh"]
-    cv2.line(vis,(int(cx_ref),0),(int(cx_ref),h),(255,100,0),2)
+    # 中心线
+    cv2.line(vis,(w//2,0),(w//2,h),(255,100,0),1)
     if det:
         cx,cy,bw,bh,conf = det
         x1=int(cx-bw/2); y1=int(cy-bh/2)
         x2=int(cx+bw/2); y2=int(cy+bh/2)
         cv2.rectangle(vis,(x1,y1),(x2,y2),(0,255,0),2)
-        cv2.circle(vis,(int(cx),int(cy)),6,(0,0,255),-1)
-        cv2.line(vis,(int(cx_ref),int(cy)),(int(cx),int(cy)),(0,255,255),2)
-        dx     = cx - cx_ref
-        d_dist = bh - bh_ref
-        c_dx = (0,255,0) if abs(dx)<TOL_DX else (0,0,255)
-        c_d  = (0,255,0) if abs(d_dist)<TOL_DIST else (0,0,255)
-        cv2.putText(vis,f"dx={dx:+.0f}px",(8,24),
-                    cv2.FONT_HERSHEY_SIMPLEX,0.6,c_dx,2)
-        cv2.putText(vis,f"dist_err={d_dist:+.0f}px bh={bh:.0f}(ref={bh_ref:.0f})",
-                    (8,50),cv2.FONT_HERSHEY_SIMPLEX,0.6,c_d,2)
-        cv2.putText(vis,f"conf={conf:.2f} step={step}",
-                    (8,76),cv2.FONT_HERSHEY_SIMPLEX,0.45,(200,200,200),1)
+        cv2.circle(vis,(int(cx),int(cy)),5,(0,0,255),-1)
+        d_dist = bh_smooth - bh_ref
+        c = (0,255,0) if abs(d_dist)<TOL_DIST else (0,0,255)
+        cv2.putText(vis,
+            f"bh={bh:.0f} smooth={bh_smooth:.0f} ref={bh_ref:.0f}",
+            (8,24),cv2.FONT_HERSHEY_SIMPLEX,0.55,(200,200,200),1)
+        cv2.putText(vis,
+            f"dist_err={d_dist:+.0f}px conf={conf:.2f}",
+            (8,48),cv2.FONT_HERSHEY_SIMPLEX,0.6,c,2)
+        cv2.putText(vis,f"step={step}",
+            (8,72),cv2.FONT_HERSHEY_SIMPLEX,0.45,(200,200,200),1)
     else:
         cv2.putText(vis,"NO BOX",(10,30),
                     cv2.FONT_HERSHEY_SIMPLEX,0.9,(0,0,255),2)
     return vis
 
-def send_chassis(pnc, vx, vy, dt):
+def send_chassis(pnc, vx, dt):
     twist = agibot_gdk.Twist()
     twist.linear  = agibot_gdk.Vector3()
     twist.angular = agibot_gdk.Vector3()
     twist.linear.x = vx
-    twist.linear.y = vy
     pnc.move_chassis(twist)
     time.sleep(dt)
 
@@ -109,100 +110,138 @@ def stop_chassis(pnc):
     pnc.move_chassis(twist)
 
 def run_calibrate(camera, model):
-    print("\n[标定] 确认机器人已推到理想夹取位置")
-    print("[标定] 按回车拍图标定...")
+    print("\n[标定] 把机器人推到理想距离，按回车拍图...")
     input()
     for _ in range(8):
         camera.get_latest_image(HEAD_CAM, 1000.0)
         time.sleep(0.12)
-    bgr = grab_frame(camera)
-    if bgr is None:
-        print("❌ 拍图失败"); return False
-    det = detect_box(model, bgr)
-    if det is None:
+
+    # 连续拍5帧取平均bh，更稳定
+    bh_list = []
+    last_det = None
+    for _ in range(20):
+        bgr = grab_frame(camera)
+        if bgr is None:
+            continue
+        det = detect_box(model, bgr)
+        if det:
+            _,_,_,bh,_ = det
+            bh_list.append(bh)
+            last_det = det
+        time.sleep(0.15)
+        if len(bh_list) >= 5:
+            break
+
+    if not bh_list:
         print("❌ 未检测到箱子")
-        cv2.imwrite("calib_failed.jpg", bgr); return False
-    cx,cy,bw,bh,conf = det
-    h,w = bgr.shape[:2]
-    calib = {"cx":round(cx,1),"cy":round(cy,1),
-             "bw":round(bw,1),"bh":round(bh,1),
-             "angle":0.0,"img_w":w,"img_h":h}
+        return False
+
+    cx,cy,bw,_,conf = last_det
+    bh_ref = round(float(np.mean(bh_list)), 1)
+    h_img, w_img = bgr.shape[:2]
+
+    calib = {
+        "cx":    round(cx,1),
+        "cy":    round(cy,1),
+        "bw":    round(bw,1),
+        "bh":    bh_ref,
+        "angle": 0.0,
+        "img_w": w_img,
+        "img_h": h_img,
+    }
     with open(CALIB_FILE,"w") as f:
         json.dump(calib,f,indent=2)
-    print(f"\n✅ 标定完成！cx={cx:.0f} cy={cy:.0f} bw={bw:.0f} bh={bh:.0f}")
+
+    print(f"\n✅ 标定完成！bh_ref={bh_ref:.1f}px（{len(bh_list)}帧平均）")
     print(f"   保存: {CALIB_FILE}")
-    vis = bgr.copy()
-    x1=int(cx-bw/2); y1=int(cy-bh/2)
-    x2=int(cx+bw/2); y2=int(cy+bh/2)
-    cv2.rectangle(vis,(x1,y1),(x2,y2),(0,255,0),3)
-    cv2.circle(vis,(int(cx),int(cy)),8,(0,0,255),-1)
-    cv2.line(vis,(int(cx),0),(int(cx),h),(255,100,0),2)
-    cv2.putText(vis,f"CALIB cx={cx:.0f} bh={bh:.0f}",
-                (8,25),cv2.FONT_HERSHEY_SIMPLEX,0.7,(0,255,0),2)
-    cv2.imwrite("calib_result.jpg", vis)
-    print("   验证图: calib_result.jpg")
+
+    # 验证图
+    bgr2 = grab_frame(camera)
+    if bgr2 is not None:
+        det2 = detect_box(model, bgr2)
+        if det2:
+            cx2,cy2,bw2,bh2,_ = det2
+            vis = bgr2.copy()
+            x1=int(cx2-bw2/2); y1=int(cy2-bh2/2)
+            x2=int(cx2+bw2/2); y2=int(cy2+bh2/2)
+            cv2.rectangle(vis,(x1,y1),(x2,y2),(0,255,0),3)
+            cv2.putText(vis,f"bh_ref={bh_ref:.0f}px",
+                        (8,25),cv2.FONT_HERSHEY_SIMPLEX,0.7,(0,255,0),2)
+            cv2.imwrite("calib_result.jpg", vis)
+            print("   验证图: calib_result.jpg")
     return True
 
 def run_align(camera, model, pnc, calib, args):
-    cx_ref = calib["cx"]
     bh_ref = calib["bh"]
-    print(f"\n[对齐] 标定参考: cx={cx_ref:.0f}px  bh={bh_ref:.0f}px")
-    print(f"[对齐] 容忍: 左右±{TOL_DX}px  距离±{TOL_DIST}px\n")
+    print(f"\n[对齐] 标定bh_ref={bh_ref:.0f}px，容忍±{TOL_DIST}px")
+    print(f"       bh越大=越近，bh越小=越远\n")
+
     if args.debug:
         os.makedirs("align_debug", exist_ok=True)
+
     no_box_cnt = 0
     aligned = False
+    bh_buf = []  # 滑动窗口平均，稳定bh
 
     for step in range(MAX_STEPS):
         bgr = grab_frame(camera)
         if bgr is None:
-            time.sleep(0.2); continue
+            time.sleep(0.2)
+            continue
 
         det = detect_box(model, bgr)
-
-        if args.debug:
-            vis = draw_debug(bgr, det, calib, step)
-            cv2.imwrite(f"align_debug/step_{step:03d}.jpg", vis)
 
         if det is None:
             no_box_cnt += 1
             print(f"  [{step:03d}] ❌ 未检测到 ({no_box_cnt}/{NO_BOX_MAX})")
             if no_box_cnt >= NO_BOX_MAX:
-                print("  ⚠️  多帧未检测到，停止"); break
-            time.sleep(0.15); continue
+                print("  ⚠️  多帧未检测到，停止")
+                break
+            time.sleep(0.1)
+            if args.debug:
+                vis = draw_debug(bgr, None, calib, step,
+                                 bh_buf[-1] if bh_buf else bh_ref)
+                cv2.imwrite(f"align_debug/step_{step:03d}.jpg", vis)
+            continue
 
         no_box_cnt = 0
         cx,cy,bw,bh,conf = det
-        dx     = cx - cx_ref    # 正=箱子偏右→底盘右移(vy<0)
-        d_dist = bh - bh_ref    # 正=箱子变大=太近→后退(vx<0)
 
-        ok_dx   = abs(dx)     <= TOL_DX
+        # 滑动窗口平均（3帧），稳定bh
+        bh_buf.append(bh)
+        if len(bh_buf) > 3:
+            bh_buf.pop(0)
+        bh_smooth = float(np.mean(bh_buf))
+
+        d_dist = bh_smooth - bh_ref   # 正=太近→后退，负=太远→前进
+
         ok_dist = abs(d_dist) <= TOL_DIST
 
         print(f"  [{step:03d}] "
-              f"dx={dx:+.0f}({'✅' if ok_dx else '❌'}) "
-              f"dist={d_dist:+.0f}bh={bh:.0f}({'✅' if ok_dist else '❌'}) "
+              f"bh={bh:.0f} smooth={bh_smooth:.0f} "
+              f"err={d_dist:+.0f}({'✅' if ok_dist else '❌'}) "
               f"conf={conf:.2f}")
 
-        if ok_dx and ok_dist:
-            print(f"\n  ✅ 对齐完成！dx={dx:+.0f}px  dist={d_dist:+.0f}px")
-            aligned = True; break
+        if args.debug:
+            vis = draw_debug(bgr, det, calib, step, bh_smooth)
+            cv2.imwrite(f"align_debug/step_{step:03d}.jpg", vis)
+
+        if ok_dist:
+            print(f"\n  ✅ 距离对齐完成！bh_smooth={bh_smooth:.0f} ref={bh_ref:.0f}")
+            aligned = True
+            break
 
         if args.no_move:
-            time.sleep(0.1); continue
+            time.sleep(0.1)
+            continue
 
-        vx, vy = 0.0, 0.0
-
-        # 左右平移：dx>0箱子偏右→底盘右移(vy负)
-        if not ok_dx:
-            vy = -math.copysign(
-                VY_BASE * (1.5 if abs(dx) > 50 else 1.0), dx)
-
-        # 前后：d_dist>0太近→后退(vx负)，d_dist<0太远→前进(vx正)
-        if not ok_dist:
-            vx = -math.copysign(VX_BASE, d_dist)
-
-        send_chassis(pnc, vx, vy, DT)
+        # 前后控制
+        # d_dist>0 太近 → 后退 vx<0
+        # d_dist<0 太远 → 前进 vx>0
+        speed = VX_BASE * (1.5 if abs(d_dist) > 30 else 1.0)
+        import math
+        vx = -math.copysign(speed, d_dist)
+        send_chassis(pnc, vx, DT)
 
     else:
         print(f"\n  ⚠️  达到最大步数")
@@ -219,11 +258,10 @@ def run_align(camera, model, pnc, calib, args):
     if bgr is not None:
         det = detect_box(model, bgr)
         if det:
-            cx,cy,bw,bh,conf = det
-            dx     = cx - cx_ref
-            d_dist = bh - bh_ref
-            print(f"  最终: dx={dx:+.0f}px  dist={d_dist:+.0f}px  bh={bh:.0f}px")
-            vis = draw_debug(bgr, det, calib, -1)
+            _,_,_,bh,conf = det
+            print(f"  最终bh={bh:.0f}px  ref={bh_ref:.0f}px  "
+                  f"err={bh-bh_ref:+.0f}px  conf={conf:.2f}")
+            vis = draw_debug(bgr, det, calib, -1, bh)
             cv2.imwrite("align_result.jpg", vis)
             print("  结果图: align_result.jpg")
     return aligned
@@ -231,19 +269,23 @@ def run_align(camera, model, pnc, calib, args):
 def main():
     args = parse_args()
     if not os.path.exists(args.model):
-        print(f"❌ 模型不存在: {args.model}"); sys.exit(1)
+        print(f"❌ 模型不存在: {args.model}")
+        sys.exit(1)
     from ultralytics import YOLO
     print("[YOLO] 加载模型...")
     model = YOLO(args.model)
     print("[YOLO] ✅ 就绪")
+
     agibot_gdk.gdk_init()
     robot  = agibot_gdk.Robot()
     camera = agibot_gdk.Camera()
     pnc    = agibot_gdk.Pnc()
     time.sleep(2)
+
     print("[头部] 低头 0.5 rad...")
     robot.move_head_joint(HEAD_LOOK_DOWN, HEAD_SPEED)
     time.sleep(2)
+
     print("[相机] 预热...")
     for _ in range(10):
         camera.get_latest_image(HEAD_CAM, 1000.0)
@@ -254,12 +296,13 @@ def main():
         run_calibrate(camera, model)
     else:
         if not os.path.exists(CALIB_FILE):
-            print(f"❌ 找不到标定文件，请先运行:")
-            print(f"   python3 box_align.py --calibrate")
+            print("❌ 找不到标定文件，请先运行:")
+            print("   python3 box_align.py --calibrate")
             sys.exit(1)
         with open(CALIB_FILE) as f:
             calib = json.load(f)
-        print(f"[标定] cx={calib['cx']}  bh={calib['bh']}")
+        print(f"[标定] bh_ref={calib['bh']}px")
+
         if not args.no_move:
             try:
                 task = pnc.get_task_state()
@@ -271,13 +314,16 @@ def main():
             pnc.request_chassis_control(1)
             time.sleep(0.5)
             print("[底盘] ✅ 蟹行控制权获取")
+
         aligned = run_align(camera, model, pnc, calib, args)
+
         if not args.no_move:
             stop_chassis(pnc)
             try:
                 pnc.cancel_task(pnc.get_task_state().id)
             except Exception:
                 pass
+
         print(f"\n{'✅ 对齐成功' if aligned else '⚠️  对齐未完成'}")
 
     try:

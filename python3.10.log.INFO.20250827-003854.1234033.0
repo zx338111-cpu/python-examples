@@ -1,0 +1,344 @@
+Log file created at: 2025/08/27 00:38:54
+Running on machine: G2
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0827 00:38:54.231257 1234033 dylog_impl.cpp:641] [DYLOG] set dylog default level to INFO
+I0827 00:38:54.231339 1234033 dylog_impl.cpp:690] [DYLOG] soc num : R2
+I0827 00:38:54.231353 1234033 dylog_impl.cpp:695] [DYLOG] can't read scene_mode, use sud
+W0827 00:38:54.231380 1234033 dylog_impl.cpp:757] [DYLOG] can't find available json config file with path : /home/agi/app/conf/scene_server/dylog_sud_default.json, use default.
+I0827 00:38:54.231518 1234033 dylog_impl.cpp:293] [DYLOG] register dsd_name : dylog/python3.10/cosine_internal
+I0827 00:38:54.234694 1234033 cosine_bus_manager.cpp:88] [cosine_internal][CosineBusManager] cosine bus config path not set, use default config.
+I0827 00:38:54.234741 1234033 cosine_bus_manager.cpp:118] [cosine_internal][CosineBusManager] initial cosine_bus_config:
+I0827 00:38:54.236250 1234033 cosine_bus_global_sync.cpp:30] [cosine_internal][BusGlobalSync] set default middleware name:aorta
+I0827 00:38:54.236287 1234033 scheduler_classic.cpp:28] [cosine_internal]Proc number set to be: 1
+I0827 00:38:54.237488 1234033 dynamic_object.cpp:521] [cosine_internal][DynamicObject] open libdynamic_aorta.so success.
+I0827 00:38:54.237685 1234033 dynamic_object.cpp:581] [cosine_internal][DynamicObject] Successfully enumerated 57 symbols in libdynamic_aorta.so
+I0827 00:38:54.237696 1234033 resource_loader.cpp:13] [cosine_internal][ResourceLoader] Attempting to load function: aorta_get_object
+I0827 00:38:54.237701 1234033 resource_loader.cpp:17] [cosine_internal][ResourceLoader] Trying address() method for C++ symbol: aorta_get_object
+I0827 00:38:54.237708 1234033 resource_loader.cpp:20] [cosine_internal][ResourceLoader] Successfully loaded C++ symbol: aorta_get_object
+I0827 00:38:54.237712 1234033 resource_loader.cpp:13] [cosine_internal][ResourceLoader] Attempting to load function: aorta_call_object_func
+I0827 00:38:54.237715 1234033 resource_loader.cpp:17] [cosine_internal][ResourceLoader] Trying address() method for C++ symbol: aorta_call_object_func
+I0827 00:38:54.237720 1234033 resource_loader.cpp:20] [cosine_internal][ResourceLoader] Successfully loaded C++ symbol: aorta_call_object_func
+I0827 00:38:54.237723 1234033 resource_loader.cpp:13] [cosine_internal][ResourceLoader] Attempting to load function: aorta_clean_up
+I0827 00:38:54.237726 1234033 resource_loader.cpp:17] [cosine_internal][ResourceLoader] Trying address() method for C++ symbol: aorta_clean_up
+I0827 00:38:54.237740 1234033 resource_loader.cpp:25] [cosine_internal][ResourceLoader] C++ symbol failed, trying c_address() method for C symbol: aorta_clean_up
+I0827 00:38:54.237746 1234033 resource_loader.cpp:28] [cosine_internal][ResourceLoader] Successfully loaded C symbol: aorta_clean_up
+W0827 00:38:54.237753 1234033 aorta_component.cpp:90] [cosine_internal]Environment variable [LOCATOR_IP/DDS_IP] not set, fallback to 10.42.0.101
+I0827 00:38:54.237758 1234033 aorta_component.cpp:496] [cosine_internal][AortaComponent] locator_ip: 10.42.0.101; Check network before domain init 
+I0827 00:38:54.237800 1234033 clock.cpp:22] [cosine_internal]load ptp time source from: libptp_clock_time.so
+I0827 00:38:54.237963 1234033 dynamic_object.cpp:521] [cosine_internal][DynamicObject] open libptp_clock_time.so success.
+I0827 00:38:54.238404 1234033 aorta_component.cpp:515] [cosine_internal][AortaComponent] Network check start. locator_ip: 10.42.0.101, timeout: 60 seconds , check_start_time: 1756226334
+I0827 00:38:54.238425 1234033 aorta_component.cpp:526] [cosine_internal][AortaComponent] locator_ip: 10.42.0.101; network is ready.
+I0827 00:38:54.238476 1234033 dylog_impl.cpp:293] [DYLOG] register dsd_name : dylog/python3.10/aorta
+I0827 00:38:54.238616 1234033 pcie_config.cc:52] [aorta]Get one valid pcie channel. producer: soc-s3 app-map_loc_app endpoint-nvscic2c_pcie_s3_c7_11 consumer: soc-s1 app-worldmodel endpoint-nvscic2c_pcie_s1_c7_11
+I0827 00:38:54.238708 1234033 os.cc:88] [aorta]Got host_id from system files: Huixi R1ROBOR2
+I0827 00:38:54.238744 1234033 pcie_manager.cc:71] [aorta]There is no pcie config in current process.
+I0827 00:38:54.239077 1234033 message_monitor_config.cc:398] [aorta]run in  mode
+I0827 00:38:54.240327 1234033 domain_impl.cc:58] [aorta]aorta version:7b1b7ddc
+I0827 00:38:54.240355 1234033 json_comm.cc:35] [aorta]file path: /home/agi/app/conf/topology/topology_rule.json not exist.
+I0827 00:38:54.240370 1234033 message_monitor_config.cc:398] [aorta]run in  mode
+I0827 00:38:54.241182 1234033 message_monitor_config.cc:731] [aorta]message monitor is updated from /home/agi/app/conf/aorta/function/aorta_monitor_conf.json
+I0827 00:38:54.242180 1234033 discovery_factory.cc:14] [aorta]type:1, host:10.42.0.101, port:2379, ttl:15, minor_cycle:100, major_cycle:3
+I0827 00:38:54.242661 1234033 config.cc:53] [aorta]AORTA_IP_MASK not set.
+I0827 00:38:54.242669 1234033 discovery.cc:245] [aorta]get ip masks empty.
+I0827 00:38:54.242676 1234033 config.cc:200] [aorta]AORTA_EXTRA_LOCAL_IPS not set.
+I0827 00:38:54.242681 1234033 discovery.cc:266] [aorta]local_publisher_ips_ empty.
+I0827 00:38:54.242702 1234033 config.cc:124] [aorta]ip match, ip:127.0.0.1
+I0827 00:38:54.242709 1234033 discovery.cc:275] [aorta]default emplace ip:10.42.0.101
+I0827 00:38:54.242712 1234033 discovery.cc:275] [aorta]default emplace ip:10.42.12.101
+I0827 00:38:54.242715 1234033 discovery.cc:275] [aorta]default emplace ip:10.42.1.101
+I0827 00:38:54.242718 1234033 discovery.cc:275] [aorta]default emplace ip:192.168.1.101
+I0827 00:38:54.242722 1234033 discovery.cc:275] [aorta]default emplace ip:10.42.30.101
+I0827 00:38:54.242724 1234033 discovery.cc:275] [aorta]default emplace ip:10.42.40.101
+I0827 00:38:54.242726 1234033 discovery.cc:275] [aorta]default emplace ip:10.20.15.199
+I0827 00:38:54.242729 1234033 discovery.cc:275] [aorta]default emplace ip:10.42.6.101
+I0827 00:38:54.242733 1234033 centralized_discovery.cc:55] [aorta]lease_ttl_:15
+I0827 00:38:54.243144 1234033 aorta_component.cpp:561] [cosine_internal][AortaComponent] aorta create domain success. uri:http://10.42.0.101:2379
+I0827 00:38:54.243273 1234033 aorta_component.cpp:447] [cosine_internal][AortaComponent] aorta domain created node: python3.10_S1 , domain_uri:http://10.42.0.101:2379
+I0827 00:38:54.243281 1234033 aorta_component.cpp:126] [cosine_internal][AortaComponent] aorta component init success. node:python3.10_S1, uri:http://10.42.0.101:2379, locator_kind(1:shm,2:tcp,3:udp):2, locator_ip:10.42.0.101, locator_port:0, aorta_dispatcher_thread_num:1
+I0827 00:38:54.243430 1234090 processor.cpp:40] [cosine_internal]processor_tid: 1234090
+I0827 00:38:54.249675 1234094 executor_impl.cc:91] [aorta]aorta-dispatch0 start spinning
+I0827 00:38:54.255226 1234093 centralized_discovery.cc:1110] [aorta]poll thread: revision:1736
+I0827 00:38:54.255322 1234093 centralized_discovery.cc:1123] [aorta]inotify_fd_:15 inotify_watch_:1 inotify_watch_path:/home/agi/app/conf/aorta/function
+I0827 00:38:54.257396 1234093 centralized_discovery.cc:615] [aorta]grant lease for node python3.10_S1 lease_id = 7587889064995110752
+I0827 00:38:54.258579 1234093 watch_state.cc:54] [aorta]watch connect success.
+I0827 00:38:54.259621 1234093 centralized_discovery.cc:1615] [aorta]recv watch response created.
+I0827 00:38:54.299005 1234033 cosine_bus_manager.cpp:294] [cosine_internal][CosineBusManager] create publisher. topic name:/gdk/config_request , middleware:aorta
+I0827 00:38:54.299724 1234033 tcp_publisher.cc:179] [aorta]topic /gdk/config_request, pub_queue_size_ 5, latch_queue_size_ 0
+I0827 00:38:54.299935 1234113 tcp_socket_server.cc:200] [aorta]The ip info is0.0.0.0:34213
+I0827 00:38:54.300115 1234113 shm_socket_server.cc:101] [aorta][/gdk/config_request] bind at pipe sock name d2379|python3.10|p1234033|n0|/gdk/config_request|p0
+I0827 00:38:54.300206 1234033 node_impl.cc:198] [aorta]CreatePublisher, host:0.0.0.0, port:34213, sockname:d2379|python3.10|p1234033|n0|/gdk/config_request|p0, topic:/gdk/config_request, uid:95505a5b-4a00-46ca-8333-7c3dce8128c4-4991715019463590898 topic_uid:-1
+I0827 00:38:54.300239 1234033 aorta_component.cpp:394] [cosine_internal][AortaComponent] aorta node create publisher. node: python3.10_S1, topic:/gdk/config_request, type:genie_msgs.msg.pb.CommonRequest, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.300280 1234033 aorta_publisher.cpp:119] [cosine_internal][AortaPublisher] publisher initialize. topic:/gdk/config_request, uri:
+I0827 00:38:54.300292 1234093 centralized_discovery.cc:681] [aorta]publisher uid:95505a5b-4a00-46ca-8333-7c3dce8128c4-4991715019463590898 topic:/gdk/config_request
+I0827 00:38:54.300295 1234033 dylog_impl.cpp:293] [DYLOG] register dsd_name : dylog/python3.10/GDK
+I0827 00:38:54.300338 1234033 publisher.cpp:27] [GDK]create publisher: /gdk/config_request type: genie_msgs.msg.pb.CommonRequest qos: 1 1 5 2
+I0827 00:38:54.300359 1234033 cosine_bus_manager.cpp:294] [cosine_internal][CosineBusManager] create publisher. topic name:/gdk/camera_conf_request , middleware:aorta
+I0827 00:38:54.300771 1234033 tcp_publisher.cc:179] [aorta]topic /gdk/camera_conf_request, pub_queue_size_ 5, latch_queue_size_ 0
+I0827 00:38:54.300863 1234113 tcp_socket_server.cc:200] [aorta]The ip info is0.0.0.0:38193
+I0827 00:38:54.300937 1234113 shm_socket_server.cc:101] [aorta][/gdk/camera_conf_request] bind at pipe sock name d2379|python3.10|p1234033|n0|/gdk/camera_conf_request|p1
+I0827 00:38:54.300997 1234033 node_impl.cc:198] [aorta]CreatePublisher, host:0.0.0.0, port:38193, sockname:d2379|python3.10|p1234033|n0|/gdk/camera_conf_request|p1, topic:/gdk/camera_conf_request, uid:774b1a9d-730a-428a-94b4-81197d2336e1-9117180461459404870 topic_uid:-1
+I0827 00:38:54.301016 1234033 aorta_component.cpp:394] [cosine_internal][AortaComponent] aorta node create publisher. node: python3.10_S1, topic:/gdk/camera_conf_request, type:genie_msgs.msg.pb.CommonRequest, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.301048 1234033 aorta_publisher.cpp:119] [cosine_internal][AortaPublisher] publisher initialize. topic:/gdk/camera_conf_request, uri:
+I0827 00:38:54.301054 1234033 publisher.cpp:27] [GDK]create publisher: /gdk/camera_conf_request type: genie_msgs.msg.pb.CommonRequest qos: 1 1 5 2
+I0827 00:38:54.301071 1234033 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/gdk/config_response , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0827 00:38:54.301081 1234033 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/gdk/config_responsehttp://10.42.0.101:2379
+I0827 00:38:54.301158 1234033 dynamic_object.cpp:521] [cosine_internal][DynamicObject] open  success.
+I0827 00:38:54.301332 1234033 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___gdk__config_response, type genie_msgs.msg.pb.CommonResponse, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 1
+I0827 00:38:54.301357 1234033 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___gdk__config_response, type:genie_msgs.msg.pb.CommonResponse, size:5
+I0827 00:38:54.301445 1234033 node_impl.cc:344] [aorta]CreateSubscriber topic:/gdk/config_response, uid:8b60fd87-31d9-425a-9d93-6e5ec6aff5a6-9533047780102618842 topic_uid:-1
+I0827 00:38:54.302560 1234033 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/gdk/config_response, type:genie_msgs.msg.pb.CommonResponse, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.302590 1234033 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/gdk/config_response, uri:
+I0827 00:38:54.302616 1234033 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/gdk/camera_conf_response , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0827 00:38:54.302626 1234033 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/gdk/camera_conf_responsehttp://10.42.0.101:2379
+I0827 00:38:54.302701 1234033 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___gdk__camera_conf_response, type genie_msgs.msg.pb.CommonResponse, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 2
+I0827 00:38:54.302721 1234033 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___gdk__camera_conf_response, type:genie_msgs.msg.pb.CommonResponse, size:5
+I0827 00:38:54.302832 1234033 node_impl.cc:344] [aorta]CreateSubscriber topic:/gdk/camera_conf_response, uid:7c622ae3-b0f6-4c8b-b1b7-46414fb04c90-3551884323222435368 topic_uid:-1
+I0827 00:38:54.302930 1234093 centralized_discovery.cc:681] [aorta]publisher uid:774b1a9d-730a-428a-94b4-81197d2336e1-9117180461459404870 topic:/gdk/camera_conf_request
+I0827 00:38:54.303246 1234033 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/gdk/camera_conf_response, type:genie_msgs.msg.pb.CommonResponse, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.303258 1234033 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/gdk/camera_conf_response, uri:
+I0827 00:38:54.303345 1234033 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/pnc/task_state , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0827 00:38:54.303357 1234033 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/pnc/task_statehttp://10.42.0.101:2379
+I0827 00:38:54.303925 1234033 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___pnc__task_state, type pnc_msgs.TaskState, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 3
+I0827 00:38:54.303947 1234033 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___pnc__task_state, type:pnc_msgs.TaskState, size:5
+I0827 00:38:54.304037 1234033 node_impl.cc:344] [aorta]CreateSubscriber topic:/pnc/task_state, uid:ad182c67-0fec-489a-aff2-ab9aac766128-9096530589114119892 topic_uid:-1
+I0827 00:38:54.304421 1234033 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/pnc/task_state, type:pnc_msgs.TaskState, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.304432 1234033 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/pnc/task_state, uri:
+I0827 00:38:54.304462 1234033 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/pnc/task_service/normal_navigation/response , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0827 00:38:54.304471 1234033 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/pnc/task_service/normal_navigation/responsehttp://10.42.0.101:2379
+I0827 00:38:54.304518 1234033 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___pnc__task_service__normal_navigation__response, type pnc_msgs.NormalNavigationResponse, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 4
+I0827 00:38:54.304523 1234093 centralized_discovery.cc:733] [aorta]subscriber uid:8b60fd87-31d9-425a-9d93-6e5ec6aff5a6-9533047780102618842 topic:/gdk/config_response
+I0827 00:38:54.304534 1234033 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___pnc__task_service__normal_navigation__response, type:pnc_msgs.NormalNavigationResponse, size:5
+I0827 00:38:54.304613 1234033 node_impl.cc:344] [aorta]CreateSubscriber topic:/pnc/task_service/normal_navigation/response, uid:b343f074-7aa9-4004-b883-6e864810cae5-7227396448010854466 topic_uid:-1
+I0827 00:38:54.304992 1234033 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/pnc/task_service/normal_navigation/response, type:pnc_msgs.NormalNavigationResponse, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.305006 1234033 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/pnc/task_service/normal_navigation/response, uri:
+I0827 00:38:54.305018 1234033 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/pnc/task_service/high_precision_navigation/response , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0827 00:38:54.305025 1234033 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/pnc/task_service/high_precision_navigation/responsehttp://10.42.0.101:2379
+I0827 00:38:54.305060 1234033 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___pnc__task_service__high_precision_navigation__response, type pnc_msgs.HighPrecisionNavigationResponse, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 5
+I0827 00:38:54.305073 1234033 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___pnc__task_service__high_precision_navigation__response, type:pnc_msgs.HighPrecisionNavigationResponse, size:5
+I0827 00:38:54.305141 1234033 node_impl.cc:344] [aorta]CreateSubscriber topic:/pnc/task_service/high_precision_navigation/response, uid:da71c355-b0bb-47a1-9ca3-c3d27b4b828c-4701876173029784314 topic_uid:-1
+I0827 00:38:54.305830 1234033 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/pnc/task_service/high_precision_navigation/response, type:pnc_msgs.HighPrecisionNavigationResponse, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.305845 1234033 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/pnc/task_service/high_precision_navigation/response, uri:
+I0827 00:38:54.305857 1234033 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/pnc/task_service/relative_move/response , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0827 00:38:54.305864 1234033 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/pnc/task_service/relative_move/responsehttp://10.42.0.101:2379
+I0827 00:38:54.305905 1234033 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___pnc__task_service__relative_move__response, type pnc_msgs.RelativeMoveResponse, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 6
+I0827 00:38:54.305917 1234033 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___pnc__task_service__relative_move__response, type:pnc_msgs.RelativeMoveResponse, size:5
+I0827 00:38:54.306002 1234033 node_impl.cc:344] [aorta]CreateSubscriber topic:/pnc/task_service/relative_move/response, uid:1d5dfea2-f3c6-4da5-8ad7-e2f3efdfd2ef-4077207897147431090 topic_uid:-1
+I0827 00:38:54.306387 1234033 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/pnc/task_service/relative_move/response, type:pnc_msgs.RelativeMoveResponse, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.306397 1234033 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/pnc/task_service/relative_move/response, uri:
+I0827 00:38:54.306408 1234033 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/pnc/task_service/task_cancel/response , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0827 00:38:54.306416 1234033 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/pnc/task_service/task_cancel/responsehttp://10.42.0.101:2379
+I0827 00:38:54.306447 1234033 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___pnc__task_service__task_cancel__response, type pnc_msgs.TaskCancelResponse, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 7
+I0827 00:38:54.306463 1234033 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___pnc__task_service__task_cancel__response, type:pnc_msgs.TaskCancelResponse, size:5
+I0827 00:38:54.306522 1234033 node_impl.cc:344] [aorta]CreateSubscriber topic:/pnc/task_service/task_cancel/response, uid:c2352a2c-6577-43dd-bf2d-d806704e3dd4-3654631836754090917 topic_uid:-1
+I0827 00:38:54.306906 1234033 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/pnc/task_service/task_cancel/response, type:pnc_msgs.TaskCancelResponse, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.306917 1234033 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/pnc/task_service/task_cancel/response, uri:
+I0827 00:38:54.306928 1234033 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/pnc/task_service/task_pause/response , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0827 00:38:54.306936 1234033 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/pnc/task_service/task_pause/responsehttp://10.42.0.101:2379
+I0827 00:38:54.306967 1234033 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___pnc__task_service__task_pause__response, type pnc_msgs.TaskPauseResponse, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 8
+I0827 00:38:54.306986 1234033 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___pnc__task_service__task_pause__response, type:pnc_msgs.TaskPauseResponse, size:5
+I0827 00:38:54.307050 1234033 node_impl.cc:344] [aorta]CreateSubscriber topic:/pnc/task_service/task_pause/response, uid:e3cfa69b-443d-4225-9091-41d72dabd173-4995236092065324733 topic_uid:-1
+I0827 00:38:54.307433 1234033 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/pnc/task_service/task_pause/response, type:pnc_msgs.TaskPauseResponse, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.307415 1234114 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /gdk/config_response, local d2379|python3.10|p1234033|n0|s0|c0, peer d2379|gdk_service|p8963|n0|/gdk/config_response|p0
+I0827 00:38:54.307443 1234033 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/pnc/task_service/task_pause/response, uri:
+I0827 00:38:54.307457 1234033 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/pnc/task_service/task_resume/response , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0827 00:38:54.307682 1234093 centralized_discovery.cc:733] [aorta]subscriber uid:7c622ae3-b0f6-4c8b-b1b7-46414fb04c90-3551884323222435368 topic:/gdk/camera_conf_response
+I0827 00:38:54.307811 1234033 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/pnc/task_service/task_resume/responsehttp://10.42.0.101:2379
+I0827 00:38:54.307857 1234033 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___pnc__task_service__task_resume__response, type pnc_msgs.TaskResumeResponse, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 9
+I0827 00:38:54.307873 1234033 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___pnc__task_service__task_resume__response, type:pnc_msgs.TaskResumeResponse, size:5
+I0827 00:38:54.307947 1234033 node_impl.cc:344] [aorta]CreateSubscriber topic:/pnc/task_service/task_resume/response, uid:0bb502a6-3c5c-46fb-be7f-09a376bf79f2-16859347558940246081 topic_uid:-1
+I0827 00:38:54.308353 1234033 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/pnc/task_service/task_resume/response, type:pnc_msgs.TaskResumeResponse, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.308367 1234033 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/pnc/task_service/task_resume/response, uri:
+I0827 00:38:54.308382 1234033 cosine_bus_manager.cpp:400] [cosine_internal][CosineBusManager] create subscriber. topic name:/pnc/task_service/remote_control/response , middleware:aorta , need async callback:0, frame_skip_rate:1
+I0827 00:38:54.308388 1234033 aorta_component.cpp:174] [cosine_internal][AortaComponent] callback_name:/pnc/task_service/remote_control/responsehttp://10.42.0.101:2379
+I0827 00:38:54.308422 1234033 buffered_data_export.cpp:115] [cosine_internal]successfully create buffer [bus_buffer___pnc__task_service__remote_control__response, type pnc_msgs.RemoteControlResponse, block num 5, valid_time 0, transfer_type 0, data_size 0, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0], buffer id = 10
+I0827 00:38:54.308435 1234033 cosine_bus_message_buffer.cpp:45] [cosine_internal][CosineBusMessageBuffer] create buffer success. name:bus_buffer___pnc__task_service__remote_control__response, type:pnc_msgs.RemoteControlResponse, size:5
+I0827 00:38:54.308498 1234033 node_impl.cc:344] [aorta]CreateSubscriber topic:/pnc/task_service/remote_control/response, uid:e032e0a9-f283-4c9d-bbb0-bf1fc63d6270-11583863028842959166 topic_uid:-1
+I0827 00:38:54.308743 1234114 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /gdk/camera_conf_response, local d2379|python3.10|p1234033|n0|s1|c0, peer d2379|gdk_service|p8963|n0|/gdk/camera_conf_response|p1
+I0827 00:38:54.308815 1234093 centralized_discovery.cc:733] [aorta]subscriber uid:ad182c67-0fec-489a-aff2-ab9aac766128-9096530589114119892 topic:/pnc/task_state
+I0827 00:38:54.308952 1234033 aorta_component.cpp:326] [cosine_internal][AortaComponent] aorta node create subscriber. node: python3.10_S1, topic:/pnc/task_service/remote_control/response, type:pnc_msgs.RemoteControlResponse, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.308962 1234033 aorta_subscriber.hpp:96] [cosine_internal][AortaSubscriber] initial. topic:/pnc/task_service/remote_control/response, uri:
+I0827 00:38:54.308983 1234033 cosine_bus_manager.cpp:294] [cosine_internal][CosineBusManager] create publisher. topic name:/pnc/task_service/normal_navigation/request , middleware:aorta
+I0827 00:38:54.309394 1234033 tcp_publisher.cc:179] [aorta]topic /pnc/task_service/normal_navigation/request, pub_queue_size_ 5, latch_queue_size_ 0
+I0827 00:38:54.309577 1234113 tcp_socket_server.cc:200] [aorta]The ip info is0.0.0.0:46581
+I0827 00:38:54.309741 1234113 shm_socket_server.cc:101] [aorta][/pnc/task_service/normal_navigation/request] bind at pipe sock name d2379|python3.10|p1234033|n0|..task_service/normal_navigation/request|p2
+I0827 00:38:54.309824 1234033 node_impl.cc:198] [aorta]CreatePublisher, host:0.0.0.0, port:46581, sockname:d2379|python3.10|p1234033|n0|..task_service/normal_navigation/request|p2, topic:/pnc/task_service/normal_navigation/request, uid:5e57245f-66cf-4108-8e0f-0a37ae46a4be-11863888217293896894 topic_uid:-1
+I0827 00:38:54.309834 1234114 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /pnc/task_state, local d2379|python3.10|p1234033|n0|s2|c0, peer d2379|quark_navigation|p9765|n0|/pnc/task_state|p24
+I0827 00:38:54.309856 1234033 aorta_component.cpp:394] [cosine_internal][AortaComponent] aorta node create publisher. node: python3.10_S1, topic:/pnc/task_service/normal_navigation/request, type:pnc_msgs.NormalNavigationRequest, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.309896 1234033 aorta_publisher.cpp:119] [cosine_internal][AortaPublisher] publisher initialize. topic:/pnc/task_service/normal_navigation/request, uri:
+I0827 00:38:54.309899 1234093 centralized_discovery.cc:733] [aorta]subscriber uid:b343f074-7aa9-4004-b883-6e864810cae5-7227396448010854466 topic:/pnc/task_service/normal_navigation/response
+I0827 00:38:54.309907 1234033 publisher.cpp:27] [GDK]create publisher: /pnc/task_service/normal_navigation/request type: pnc_msgs.NormalNavigationRequest qos: 1 1 5 2
+I0827 00:38:54.309937 1234033 cosine_bus_manager.cpp:294] [cosine_internal][CosineBusManager] create publisher. topic name:/pnc/task_service/high_precision_navigation/request , middleware:aorta
+I0827 00:38:54.310513 1234033 tcp_publisher.cc:179] [aorta]topic /pnc/task_service/high_precision_navigation/request, pub_queue_size_ 5, latch_queue_size_ 0
+I0827 00:38:54.310614 1234113 tcp_socket_server.cc:200] [aorta]The ip info is0.0.0.0:36471
+I0827 00:38:54.310708 1234113 shm_socket_server.cc:101] [aorta][/pnc/task_service/high_precision_navigation/request] bind at pipe sock name d2379|python3.10|p1234033|n0|..vice/high_precision_navigation/request|p3
+I0827 00:38:54.310904 1234114 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /pnc/task_service/normal_navigation/response, local d2379|python3.10|p1234033|n0|s3|c0, peer d2379|quark_navigation|p9765|n0|..ask_service/normal_navigation/response|p11
+I0827 00:38:54.310966 1234093 centralized_discovery.cc:733] [aorta]subscriber uid:da71c355-b0bb-47a1-9ca3-c3d27b4b828c-4701876173029784314 topic:/pnc/task_service/high_precision_navigation/response
+I0827 00:38:54.311115 1234033 node_impl.cc:198] [aorta]CreatePublisher, host:0.0.0.0, port:36471, sockname:d2379|python3.10|p1234033|n0|..vice/high_precision_navigation/request|p3, topic:/pnc/task_service/high_precision_navigation/request, uid:3777f3fd-c9ce-47ee-a977-0b35d01f819a-13581583299462652003 topic_uid:-1
+I0827 00:38:54.311141 1234033 aorta_component.cpp:394] [cosine_internal][AortaComponent] aorta node create publisher. node: python3.10_S1, topic:/pnc/task_service/high_precision_navigation/request, type:pnc_msgs.HighPrecisionNavigationRequest, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.311178 1234033 aorta_publisher.cpp:119] [cosine_internal][AortaPublisher] publisher initialize. topic:/pnc/task_service/high_precision_navigation/request, uri:
+I0827 00:38:54.311190 1234033 publisher.cpp:27] [GDK]create publisher: /pnc/task_service/high_precision_navigation/request type: pnc_msgs.HighPrecisionNavigationRequest qos: 1 1 5 2
+I0827 00:38:54.311226 1234033 cosine_bus_manager.cpp:294] [cosine_internal][CosineBusManager] create publisher. topic name:/pnc/task_service/relative_move/request , middleware:aorta
+I0827 00:38:54.311844 1234114 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /pnc/task_service/high_precision_navigation/response, local d2379|python3.10|p1234033|n0|s4|c0, peer d2379|quark_navigation|p9765|n0|..ice/high_precision_navigation/response|p12
+I0827 00:38:54.311906 1234093 centralized_discovery.cc:733] [aorta]subscriber uid:1d5dfea2-f3c6-4da5-8ad7-e2f3efdfd2ef-4077207897147431090 topic:/pnc/task_service/relative_move/response
+I0827 00:38:54.312095 1234033 tcp_publisher.cc:179] [aorta]topic /pnc/task_service/relative_move/request, pub_queue_size_ 5, latch_queue_size_ 0
+I0827 00:38:54.312155 1234113 tcp_socket_server.cc:200] [aorta]The ip info is0.0.0.0:39953
+I0827 00:38:54.312218 1234113 shm_socket_server.cc:101] [aorta][/pnc/task_service/relative_move/request] bind at pipe sock name d2379|python3.10|p1234033|n0|/pnc/task_service/relative_move/request|p4
+I0827 00:38:54.312290 1234033 node_impl.cc:198] [aorta]CreatePublisher, host:0.0.0.0, port:39953, sockname:d2379|python3.10|p1234033|n0|/pnc/task_service/relative_move/request|p4, topic:/pnc/task_service/relative_move/request, uid:a893d52d-5e2b-4c97-81bd-e702223e84f8-1499998713038698463 topic_uid:-1
+I0827 00:38:54.312314 1234033 aorta_component.cpp:394] [cosine_internal][AortaComponent] aorta node create publisher. node: python3.10_S1, topic:/pnc/task_service/relative_move/request, type:pnc_msgs.RelativeMoveRequest, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.312348 1234033 aorta_publisher.cpp:119] [cosine_internal][AortaPublisher] publisher initialize. topic:/pnc/task_service/relative_move/request, uri:
+I0827 00:38:54.312357 1234033 publisher.cpp:27] [GDK]create publisher: /pnc/task_service/relative_move/request type: pnc_msgs.RelativeMoveRequest qos: 1 1 5 2
+I0827 00:38:54.312381 1234033 cosine_bus_manager.cpp:294] [cosine_internal][CosineBusManager] create publisher. topic name:/pnc/task_service/task_cancel/request , middleware:aorta
+I0827 00:38:54.312815 1234033 tcp_publisher.cc:179] [aorta]topic /pnc/task_service/task_cancel/request, pub_queue_size_ 5, latch_queue_size_ 0
+I0827 00:38:54.312881 1234113 tcp_socket_server.cc:200] [aorta]The ip info is0.0.0.0:38355
+I0827 00:38:54.313035 1234114 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /pnc/task_service/relative_move/response, local d2379|python3.10|p1234033|n0|s5|c0, peer d2379|quark_navigation|p9765|n0|/pnc/task_service/relative_move/response|p15
+I0827 00:38:54.313091 1234093 centralized_discovery.cc:733] [aorta]subscriber uid:c2352a2c-6577-43dd-bf2d-d806704e3dd4-3654631836754090917 topic:/pnc/task_service/task_cancel/response
+I0827 00:38:54.313208 1234113 shm_socket_server.cc:101] [aorta][/pnc/task_service/task_cancel/request] bind at pipe sock name d2379|python3.10|p1234033|n0|/pnc/task_service/task_cancel/request|p5
+I0827 00:38:54.313273 1234033 node_impl.cc:198] [aorta]CreatePublisher, host:0.0.0.0, port:38355, sockname:d2379|python3.10|p1234033|n0|/pnc/task_service/task_cancel/request|p5, topic:/pnc/task_service/task_cancel/request, uid:b98f3905-6628-43a4-ab29-a628db41e151-10250913672907467700 topic_uid:-1
+I0827 00:38:54.313313 1234033 aorta_component.cpp:394] [cosine_internal][AortaComponent] aorta node create publisher. node: python3.10_S1, topic:/pnc/task_service/task_cancel/request, type:pnc_msgs.TaskCancelRequest, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.313349 1234033 aorta_publisher.cpp:119] [cosine_internal][AortaPublisher] publisher initialize. topic:/pnc/task_service/task_cancel/request, uri:
+I0827 00:38:54.313357 1234033 publisher.cpp:27] [GDK]create publisher: /pnc/task_service/task_cancel/request type: pnc_msgs.TaskCancelRequest qos: 1 1 5 2
+I0827 00:38:54.313380 1234033 cosine_bus_manager.cpp:294] [cosine_internal][CosineBusManager] create publisher. topic name:/pnc/task_service/task_pause/request , middleware:aorta
+I0827 00:38:54.313970 1234114 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /pnc/task_service/task_cancel/response, local d2379|python3.10|p1234033|n0|s6|c0, peer d2379|quark_navigation|p9765|n0|/pnc/task_service/task_cancel/response|p17
+I0827 00:38:54.314038 1234093 centralized_discovery.cc:733] [aorta]subscriber uid:e3cfa69b-443d-4225-9091-41d72dabd173-4995236092065324733 topic:/pnc/task_service/task_pause/response
+I0827 00:38:54.314370 1234033 tcp_publisher.cc:179] [aorta]topic /pnc/task_service/task_pause/request, pub_queue_size_ 5, latch_queue_size_ 0
+I0827 00:38:54.314465 1234113 tcp_socket_server.cc:200] [aorta]The ip info is0.0.0.0:34809
+I0827 00:38:54.315059 1234114 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /pnc/task_service/task_pause/response, local d2379|python3.10|p1234033|n0|s7|c0, peer d2379|quark_navigation|p9765|n0|/pnc/task_service/task_pause/response|p18
+I0827 00:38:54.315129 1234093 centralized_discovery.cc:733] [aorta]subscriber uid:0bb502a6-3c5c-46fb-be7f-09a376bf79f2-16859347558940246081 topic:/pnc/task_service/task_resume/response
+I0827 00:38:54.316046 1234114 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /pnc/task_service/task_resume/response, local d2379|python3.10|p1234033|n0|s8|c0, peer d2379|quark_navigation|p9765|n0|/pnc/task_service/task_resume/response|p19
+I0827 00:38:54.316099 1234093 centralized_discovery.cc:733] [aorta]subscriber uid:e032e0a9-f283-4c9d-bbb0-bf1fc63d6270-11583863028842959166 topic:/pnc/task_service/remote_control/response
+I0827 00:38:54.316877 1234114 shm_subscriber.cc:120] [aorta]subscriber connect to publisher success, topic /pnc/task_service/remote_control/response, local d2379|python3.10|p1234033|n0|s9|c0, peer d2379|quark_navigation|p9765|n0|..c/task_service/remote_control/response|p16
+I0827 00:38:54.316924 1234093 centralized_discovery.cc:681] [aorta]publisher uid:5e57245f-66cf-4108-8e0f-0a37ae46a4be-11863888217293896894 topic:/pnc/task_service/normal_navigation/request
+I0827 00:38:54.317821 1234113 shm_socket_server.cc:101] [aorta][/pnc/task_service/task_pause/request] bind at pipe sock name d2379|python3.10|p1234033|n0|/pnc/task_service/task_pause/request|p6
+I0827 00:38:54.317974 1234033 node_impl.cc:198] [aorta]CreatePublisher, host:0.0.0.0, port:34809, sockname:d2379|python3.10|p1234033|n0|/pnc/task_service/task_pause/request|p6, topic:/pnc/task_service/task_pause/request, uid:1ca7db7c-1c03-4bee-8612-9a78a36e6098-2366368184012060648 topic_uid:-1
+I0827 00:38:54.318010 1234033 aorta_component.cpp:394] [cosine_internal][AortaComponent] aorta node create publisher. node: python3.10_S1, topic:/pnc/task_service/task_pause/request, type:pnc_msgs.TaskPauseRequest, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.318054 1234033 aorta_publisher.cpp:119] [cosine_internal][AortaPublisher] publisher initialize. topic:/pnc/task_service/task_pause/request, uri:
+I0827 00:38:54.318070 1234033 publisher.cpp:27] [GDK]create publisher: /pnc/task_service/task_pause/request type: pnc_msgs.TaskPauseRequest qos: 1 1 5 2
+I0827 00:38:54.318110 1234033 cosine_bus_manager.cpp:294] [cosine_internal][CosineBusManager] create publisher. topic name:/pnc/task_service/task_resume/request , middleware:aorta
+I0827 00:38:54.318603 1234033 tcp_publisher.cc:179] [aorta]topic /pnc/task_service/task_resume/request, pub_queue_size_ 5, latch_queue_size_ 0
+I0827 00:38:54.318624 1234093 centralized_discovery.cc:681] [aorta]publisher uid:3777f3fd-c9ce-47ee-a977-0b35d01f819a-13581583299462652003 topic:/pnc/task_service/high_precision_navigation/request
+I0827 00:38:54.318768 1234113 tcp_socket_server.cc:200] [aorta]The ip info is0.0.0.0:46621
+I0827 00:38:54.318970 1234113 shm_socket_server.cc:101] [aorta][/pnc/task_service/task_resume/request] bind at pipe sock name d2379|python3.10|p1234033|n0|/pnc/task_service/task_resume/request|p7
+I0827 00:38:54.319052 1234033 node_impl.cc:198] [aorta]CreatePublisher, host:0.0.0.0, port:46621, sockname:d2379|python3.10|p1234033|n0|/pnc/task_service/task_resume/request|p7, topic:/pnc/task_service/task_resume/request, uid:a02683d6-4522-4817-9202-c19b13f8a190-18204958959141007063 topic_uid:-1
+I0827 00:38:54.319079 1234033 aorta_component.cpp:394] [cosine_internal][AortaComponent] aorta node create publisher. node: python3.10_S1, topic:/pnc/task_service/task_resume/request, type:pnc_msgs.TaskResumeRequest, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.319114 1234033 aorta_publisher.cpp:119] [cosine_internal][AortaPublisher] publisher initialize. topic:/pnc/task_service/task_resume/request, uri:
+I0827 00:38:54.319124 1234033 publisher.cpp:27] [GDK]create publisher: /pnc/task_service/task_resume/request type: pnc_msgs.TaskResumeRequest qos: 1 1 5 2
+I0827 00:38:54.319296 1234033 cosine_bus_manager.cpp:294] [cosine_internal][CosineBusManager] create publisher. topic name:/pnc/remote_control_cmd , middleware:aorta
+I0827 00:38:54.319798 1234033 tcp_publisher.cc:179] [aorta]topic /pnc/remote_control_cmd, pub_queue_size_ 5, latch_queue_size_ 0
+I0827 00:38:54.322636 1234093 centralized_discovery.cc:681] [aorta]publisher uid:a893d52d-5e2b-4c97-81bd-e702223e84f8-1499998713038698463 topic:/pnc/task_service/relative_move/request
+I0827 00:38:54.323010 1234113 tcp_socket_server.cc:200] [aorta]The ip info is0.0.0.0:33417
+I0827 00:38:54.323172 1234113 shm_socket_server.cc:101] [aorta][/pnc/remote_control_cmd] bind at pipe sock name d2379|python3.10|p1234033|n0|/pnc/remote_control_cmd|p8
+I0827 00:38:54.323266 1234033 node_impl.cc:198] [aorta]CreatePublisher, host:0.0.0.0, port:33417, sockname:d2379|python3.10|p1234033|n0|/pnc/remote_control_cmd|p8, topic:/pnc/remote_control_cmd, uid:2c04d9fd-276f-413d-83c7-056b1d33c455-2921114360754287628 topic_uid:-1
+I0827 00:38:54.323293 1234033 aorta_component.cpp:394] [cosine_internal][AortaComponent] aorta node create publisher. node: python3.10_S1, topic:/pnc/remote_control_cmd, type:geometry_msgs.msg.pb.TwistStamped, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.323335 1234033 aorta_publisher.cpp:119] [cosine_internal][AortaPublisher] publisher initialize. topic:/pnc/remote_control_cmd, uri:
+I0827 00:38:54.323352 1234033 publisher.cpp:27] [GDK]create publisher: /pnc/remote_control_cmd type: geometry_msgs.msg.pb.TwistStamped qos: 1 1 5 2
+I0827 00:38:54.323393 1234033 cosine_bus_manager.cpp:294] [cosine_internal][CosineBusManager] create publisher. topic name:/pnc/task_service/remote_control/request , middleware:aorta
+I0827 00:38:54.323992 1234033 tcp_publisher.cc:179] [aorta]topic /pnc/task_service/remote_control/request, pub_queue_size_ 5, latch_queue_size_ 0
+I0827 00:38:54.324045 1234113 tcp_socket_server.cc:200] [aorta]The ip info is0.0.0.0:37407
+I0827 00:38:54.324105 1234113 shm_socket_server.cc:101] [aorta][/pnc/task_service/remote_control/request] bind at pipe sock name d2379|python3.10|p1234033|n0|/pnc/task_service/remote_control/request|p9
+I0827 00:38:54.324162 1234033 node_impl.cc:198] [aorta]CreatePublisher, host:0.0.0.0, port:37407, sockname:d2379|python3.10|p1234033|n0|/pnc/task_service/remote_control/request|p9, topic:/pnc/task_service/remote_control/request, uid:d1060204-24aa-42c6-b25c-30a05ac94282-10398465225129759782 topic_uid:-1
+I0827 00:38:54.324179 1234033 aorta_component.cpp:394] [cosine_internal][AortaComponent] aorta node create publisher. node: python3.10_S1, topic:/pnc/task_service/remote_control/request, type:pnc_msgs.RemoteControlRequest, qos:(history:1, depth:5, reliability:1, durability:2), uri:http://10.42.0.101:2379
+I0827 00:38:54.324213 1234033 aorta_publisher.cpp:119] [cosine_internal][AortaPublisher] publisher initialize. topic:/pnc/task_service/remote_control/request, uri:
+I0827 00:38:54.324219 1234033 publisher.cpp:27] [GDK]create publisher: /pnc/task_service/remote_control/request type: pnc_msgs.RemoteControlRequest qos: 1 1 5 2
+I0827 00:38:54.324692 1234093 centralized_discovery.cc:681] [aorta]publisher uid:b98f3905-6628-43a4-ab29-a628db41e151-10250913672907467700 topic:/pnc/task_service/task_cancel/request
+I0827 00:38:54.326354 1234093 centralized_discovery.cc:681] [aorta]publisher uid:1ca7db7c-1c03-4bee-8612-9a78a36e6098-2366368184012060648 topic:/pnc/task_service/task_pause/request
+I0827 00:38:54.328661 1234093 centralized_discovery.cc:681] [aorta]publisher uid:a02683d6-4522-4817-9202-c19b13f8a190-18204958959141007063 topic:/pnc/task_service/task_resume/request
+I0827 00:38:54.331120 1234093 centralized_discovery.cc:681] [aorta]publisher uid:2c04d9fd-276f-413d-83c7-056b1d33c455-2921114360754287628 topic:/pnc/remote_control_cmd
+I0827 00:38:54.335565 1234093 centralized_discovery.cc:681] [aorta]publisher uid:d1060204-24aa-42c6-b25c-30a05ac94282-10398465225129759782 topic:/pnc/task_service/remote_control/request
+I0827 00:38:54.362888 1234094 pnc_impl.cpp:36] [GDK]Received pnc task state
+I0827 00:38:54.462888 1234094 pnc_impl.cpp:36] [GDK]Received pnc task state
+I0827 00:38:54.562857 1234094 pnc_impl.cpp:36] [GDK]Received pnc task state
+I0827 00:38:54.662848 1234094 pnc_impl.cpp:36] [GDK]Received pnc task state
+I0827 00:38:54.762846 1234094 pnc_impl.cpp:36] [GDK]Received pnc task state
+I0827 00:38:54.862839 1234094 buffered_data_export.cpp:320] [cosine_internal]successfully expanded buffer [bus_buffer___pnc__task_state, type pnc_msgs.TaskState, block num 6, valid_time 0, transfer_type 0, data_size 56, mem_type 0, lib_name , ext_data_size 0, is_protobuf 1, enable_event_sync_subscriber 0] to size: 6
+I0827 00:38:54.862903 1234094 pnc_impl.cpp:36] [GDK]Received pnc task state
+I0827 00:38:54.962852 1234094 pnc_impl.cpp:36] [GDK]Received pnc task state
+I0827 00:38:55.062842 1234094 pnc_impl.cpp:36] [GDK]Received pnc task state
+I0827 00:38:55.162854 1234094 pnc_impl.cpp:36] [GDK]Received pnc task state
+I0827 00:38:55.262843 1234094 pnc_impl.cpp:36] [GDK]Received pnc task state
+I0827 00:38:55.325769 1234113 shm_channel.cc:107] [aorta]send shared memory pool fd 71, uuid 4122, topic /pnc/task_service/remote_control/request
+I0827 00:38:55.326471 1234094 pnc_impl.cpp:192] [GDK]Received pnc remote control rsp
+E0827 00:38:55.326522 1234033 pnc_impl.cpp:659] [GDK]Pnc remote control failed,reason:Task is not in IDLE, FAIL, SUCCESS or CANCELED state
+I0827 00:38:55.362959 1234094 pnc_impl.cpp:36] [GDK]Received pnc task state
+I0827 00:38:55.423480 1234033 pnc.cpp:15] [GDK]Pnc destructor
+I0827 00:38:55.423555 1234033 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___pnc__task_service__high_precision_navigation__response release.
+I0827 00:38:55.423602 1234033 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:da71c355-b0bb-47a1-9ca3-c3d27b4b828c-4701876173029784314
+I0827 00:38:55.424021 1234033 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/pnc/task_service/high_precision_navigation/responsehttp://10.42.0.101:2379 release.
+I0827 00:38:55.424037 1234033 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /pnc/task_service/high_precision_navigation/response
+I0827 00:38:55.424043 1234033 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0827 00:38:55.424046 1234033 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0827 00:38:55.424068 1234033 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___pnc__task_service__normal_navigation__response release.
+I0827 00:38:55.424090 1234033 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:b343f074-7aa9-4004-b883-6e864810cae5-7227396448010854466
+I0827 00:38:55.424293 1234033 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/pnc/task_service/normal_navigation/responsehttp://10.42.0.101:2379 release.
+I0827 00:38:55.424301 1234033 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /pnc/task_service/normal_navigation/response
+I0827 00:38:55.424306 1234033 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0827 00:38:55.424310 1234033 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0827 00:38:55.424328 1234033 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___pnc__task_service__relative_move__response release.
+I0827 00:38:55.424345 1234033 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:1d5dfea2-f3c6-4da5-8ad7-e2f3efdfd2ef-4077207897147431090
+I0827 00:38:55.424481 1234033 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/pnc/task_service/relative_move/responsehttp://10.42.0.101:2379 release.
+I0827 00:38:55.424487 1234033 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /pnc/task_service/relative_move/response
+I0827 00:38:55.424490 1234033 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0827 00:38:55.424494 1234033 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0827 00:38:55.424507 1234033 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___pnc__task_service__remote_control__response release.
+I0827 00:38:55.424527 1234033 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:e032e0a9-f283-4c9d-bbb0-bf1fc63d6270-11583863028842959166
+I0827 00:38:55.424769 1234033 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/pnc/task_service/remote_control/responsehttp://10.42.0.101:2379 release.
+I0827 00:38:55.424778 1234033 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /pnc/task_service/remote_control/response
+I0827 00:38:55.424784 1234033 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0827 00:38:55.424788 1234033 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0827 00:38:55.424804 1234033 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___pnc__task_service__task_cancel__response release.
+I0827 00:38:55.424819 1234033 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:c2352a2c-6577-43dd-bf2d-d806704e3dd4-3654631836754090917
+I0827 00:38:55.424998 1234033 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/pnc/task_service/task_cancel/responsehttp://10.42.0.101:2379 release.
+I0827 00:38:55.425004 1234033 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /pnc/task_service/task_cancel/response
+I0827 00:38:55.425007 1234033 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0827 00:38:55.425010 1234033 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0827 00:38:55.425024 1234033 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___pnc__task_service__task_pause__response release.
+I0827 00:38:55.425037 1234033 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:e3cfa69b-443d-4225-9091-41d72dabd173-4995236092065324733
+I0827 00:38:55.425191 1234033 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/pnc/task_service/task_pause/responsehttp://10.42.0.101:2379 release.
+I0827 00:38:55.425199 1234033 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /pnc/task_service/task_pause/response
+I0827 00:38:55.425201 1234033 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0827 00:38:55.425204 1234033 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0827 00:38:55.425215 1234033 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___pnc__task_service__task_resume__response release.
+I0827 00:38:55.425227 1234033 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:0bb502a6-3c5c-46fb-be7f-09a376bf79f2-16859347558940246081
+I0827 00:38:55.425346 1234033 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/pnc/task_service/task_resume/responsehttp://10.42.0.101:2379 release.
+I0827 00:38:55.425351 1234033 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /pnc/task_service/task_resume/response
+I0827 00:38:55.425355 1234033 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0827 00:38:55.425357 1234033 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0827 00:38:55.425371 1234033 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___pnc__task_state release.
+I0827 00:38:55.425377 1234033 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:ad182c67-0fec-489a-aff2-ab9aac766128-9096530589114119892
+I0827 00:38:55.425516 1234033 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/pnc/task_statehttp://10.42.0.101:2379 release.
+I0827 00:38:55.425521 1234033 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /pnc/task_state
+I0827 00:38:55.425524 1234033 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0827 00:38:55.425527 1234033 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0827 00:38:55.425571 1234033 publisher_impl.cc:32] [aorta]Publisher destory, UnRegisterPublisher uid:a02683d6-4522-4817-9202-c19b13f8a190-18204958959141007063
+I0827 00:38:55.425891 1234033 publisher_impl.cc:32] [aorta]Publisher destory, UnRegisterPublisher uid:1ca7db7c-1c03-4bee-8612-9a78a36e6098-2366368184012060648
+I0827 00:38:55.426043 1234033 publisher_impl.cc:32] [aorta]Publisher destory, UnRegisterPublisher uid:b98f3905-6628-43a4-ab29-a628db41e151-10250913672907467700
+I0827 00:38:55.426237 1234033 publisher_impl.cc:32] [aorta]Publisher destory, UnRegisterPublisher uid:d1060204-24aa-42c6-b25c-30a05ac94282-10398465225129759782
+I0827 00:38:55.426432 1234033 publisher_impl.cc:32] [aorta]Publisher destory, UnRegisterPublisher uid:a893d52d-5e2b-4c97-81bd-e702223e84f8-1499998713038698463
+I0827 00:38:55.426605 1234033 publisher_impl.cc:32] [aorta]Publisher destory, UnRegisterPublisher uid:5e57245f-66cf-4108-8e0f-0a37ae46a4be-11863888217293896894
+I0827 00:38:55.427083 1234033 publisher_impl.cc:32] [aorta]Publisher destory, UnRegisterPublisher uid:3777f3fd-c9ce-47ee-a977-0b35d01f819a-13581583299462652003
+I0827 00:38:55.427703 1234033 publisher_impl.cc:32] [aorta]Publisher destory, UnRegisterPublisher uid:2c04d9fd-276f-413d-83c7-056b1d33c455-2921114360754287628
+I0827 00:38:55.458828 1234033 publisher_impl.cc:32] [aorta]Publisher destory, UnRegisterPublisher uid:774b1a9d-730a-428a-94b4-81197d2336e1-9117180461459404870
+I0827 00:38:55.459236 1234033 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___gdk__camera_conf_response release.
+I0827 00:38:55.459278 1234033 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:7c622ae3-b0f6-4c8b-b1b7-46414fb04c90-3551884323222435368
+I0827 00:38:55.459597 1234033 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/gdk/camera_conf_responsehttp://10.42.0.101:2379 release.
+I0827 00:38:55.459610 1234033 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /gdk/camera_conf_response
+I0827 00:38:55.459616 1234033 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0827 00:38:55.459619 1234033 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0827 00:38:55.459632 1234033 publisher_impl.cc:32] [aorta]Publisher destory, UnRegisterPublisher uid:95505a5b-4a00-46ca-8333-7c3dce8128c4-4991715019463590898
+I0827 00:38:55.459834 1234113 communicator_manager.cc:46] [aorta]pub-loop2379-0 exit
+I0827 00:38:55.460027 1234033 cosine_bus_message_buffer.cpp:147] [cosine_internal][CosineBusMessageBuffer] buffer:bus_buffer___gdk__config_response release.
+I0827 00:38:55.460041 1234033 dynamic_object.cpp:503] [cosine_internal][DynamicObject] close  success.
+I0827 00:38:55.460047 1234033 dynamic_object_manager.cpp:58] [cosine_internal][DynamicObject] bus_buffer___gdk__config_response erase so[]
+I0827 00:38:55.460062 1234033 subscriber_impl.cc:40] [aorta]Subscriber destory, UnRegisterSubscriber uid:8b60fd87-31d9-425a-9d93-6e5ec6aff5a6-9533047780102618842
+I0827 00:38:55.460242 1234114 communicator_manager.cc:46] [aorta]sub-loop2379-0 exit
+I0827 00:38:55.460368 1234033 aorta_component.cpp:410] [cosine_internal][AortaComponent] aorta subscriber:/gdk/config_responsehttp://10.42.0.101:2379 release.
+I0827 00:38:55.460381 1234033 subscriber_strategy.cpp:86] [cosine_internal][Subscriber] Bus subscriber destruct: /gdk/config_response
+I0827 00:38:55.460386 1234033 subscriber_strategy.cpp:90] [cosine_internal][Subscriber] Bus subscriber destruct ...
+I0827 00:38:55.460390 1234033 subscriber_strategy.cpp:96] [cosine_internal][Subscriber] Bus subscriber destruct finish.
+I0827 00:38:55.460633 1234033 cosine_bus_manager.cpp:177] [cosine_internal][CosineBusManager] release.
+I0827 00:38:55.460650 1234033 scheduler.cpp:144] [cosine_internal]Shutdown: Stopping 1 processor threads
+I0827 00:38:55.460655 1234033 processor.cpp:73] [cosine_internal]processor 1234090 stopping... waiting for thread to join...
+I0827 00:38:55.460671 1234090 processor.cpp:60] [cosine_internal]processor_tid: 1234090 stopped
+I0827 00:38:55.460721 1234033 scheduler.cpp:148] [cosine_internal]Shutdown: All processor threads stopped
+I0827 00:38:55.460733 1234033 scheduler.cpp:161] [cosine_internal]Shutdown: Force releasing locks for 0 coroutines
+I0827 00:38:55.460741 1234033 aorta_component.cpp:140] [cosine_internal][AortaComponent] release.
+I0827 00:38:55.460784 1234094 executor_impl.cc:184] [aorta]aorta-dispatch0 stop spinning
